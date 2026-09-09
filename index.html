@@ -1,0 +1,533 @@
+<title>Breizhou</title>
+<meta name="description" content="Breizhou, cuisine centrale à Bréteil : des repas frais et locaux, cuisinés chaque jour pour les crèches, les écoles et les seniors de Bretagne.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600&family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+  :root{
+    --ground:#FFFBF5;
+    --carotte:#FFEFE2;
+    --pois:#EDF4E1;
+    --ink:#1F3524;
+    --muted:#5F7062;
+    --orange:#E4572E;
+    --orange-ink:#C1431C;
+    --green:#5E9B32;
+    --green-ink:#3F7020;
+    --line:#EADFD0;
+    --label-bg:#FFFFFF;
+    --shadow:0 18px 40px -24px rgba(31,53,36,.35);
+    --display:"Fredoka","Nunito Sans","Trebuchet MS",sans-serif;
+    --body:"Nunito Sans","Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --ground:#161F18;
+      --carotte:#2A211B;
+      --pois:#1F2B1E;
+      --ink:#F0F4EA;
+      --muted:#A7B6A8;
+      --orange:#F27A55;
+      --orange-ink:#FF9A7A;
+      --green:#8CC960;
+      --green-ink:#A9DC84;
+      --line:#33413A;
+      --label-bg:#FAF8F2;
+      --shadow:0 18px 40px -24px rgba(0,0,0,.7);
+    }
+  }
+  :root[data-theme="dark"]{
+    --ground:#161F18;
+    --carotte:#2A211B;
+    --pois:#1F2B1E;
+    --ink:#F0F4EA;
+    --muted:#A7B6A8;
+    --orange:#F27A55;
+    --orange-ink:#FF9A7A;
+    --green:#8CC960;
+    --green-ink:#A9DC84;
+    --line:#33413A;
+    --label-bg:#FAF8F2;
+    --shadow:0 18px 40px -24px rgba(0,0,0,.7);
+  }
+
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} *{transition:none!important;animation:none!important} }
+  body{
+    margin:0;background:var(--ground);color:var(--ink);
+    font-family:var(--body);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--green-ink)}
+  a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid var(--orange);outline-offset:3px;border-radius:4px}
+  img{max-width:100%;display:block}
+  h1,h2,h3{font-family:var(--display);font-weight:600;line-height:1.1;margin:0;text-wrap:balance;letter-spacing:-.01em}
+  h1{font-size:clamp(2.4rem,5.5vw,4.2rem)}
+  h2{font-size:clamp(1.7rem,3.2vw,2.5rem)}
+  h3{font-size:1.25rem}
+  p{margin:0}
+  .wrap{width:min(1100px,calc(100% - 2.5rem));margin-inline:auto}
+  .eyebrow{font-family:var(--body);font-weight:700;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;color:var(--orange-ink)}
+  .lede{font-size:1.15rem;max-width:62ch;color:var(--muted)}
+  .prose{max-width:62ch}
+  section{padding-block:clamp(3.5rem,8vw,6.5rem)}
+  section + section{border-top:1px solid var(--line)}
+  .sec-head{display:grid;gap:.9rem;margin-bottom:2.5rem}
+
+  /* boutons */
+  .btn{display:inline-flex;align-items:center;gap:.5rem;padding:.8rem 1.35rem;border-radius:999px;font-weight:700;text-decoration:none;border:2px solid transparent;font-size:1rem;cursor:pointer;font-family:var(--body);transition:transform .15s ease,background .15s ease}
+  .btn:hover{transform:translateY(-1px)}
+  .btn-primary{background:var(--orange);color:#fff}
+  .btn-primary:hover{background:var(--orange-ink)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .btn-ghost:hover{border-color:var(--ink)}
+
+  /* header */
+  header{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--ground) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:1rem;padding-block:.7rem}
+  .brand{display:flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink)}
+  .brand img{width:46px;height:46px;border-radius:50%}
+  .brand span{font-family:var(--display);font-weight:600;font-size:1.45rem;color:var(--green-ink)}
+  .nav ul{display:flex;gap:1.4rem;list-style:none;margin:0;padding:0}
+  .nav ul a{text-decoration:none;color:var(--ink);font-weight:600;font-size:.95rem}
+  .nav ul a:hover{color:var(--orange-ink)}
+  @media (max-width:820px){ .nav ul{display:none} }
+
+  /* hero */
+  .hero{padding-block:clamp(3rem,7vw,5.5rem) clamp(3rem,7vw,5rem)}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(2rem,5vw,4.5rem);align-items:center}
+  @media (max-width:860px){ .hero-grid{grid-template-columns:1fr} }
+  .hero .eyebrow{margin-bottom:1rem}
+  .hero h1 em{font-style:normal;color:var(--orange)}
+  .hero .lede{margin-top:1.3rem}
+  .hero-cta{display:flex;flex-wrap:wrap;gap:.8rem;margin-top:2rem}
+  .facts{display:flex;flex-wrap:wrap;gap:.6rem 1.8rem;margin-top:2.4rem;padding-top:1.4rem;border-top:1px solid var(--line);font-size:.95rem;color:var(--muted)}
+  .facts b{color:var(--ink);font-weight:700}
+
+  /* étiquette de traçabilité rendue en CSS — proportions réelles 66 × 36 mm */
+  .label-stage{display:grid;place-items:center;gap:1rem}
+  .label-stage figcaption{font-size:.85rem;color:var(--muted);text-align:center;max-width:34ch}
+  .etiquette{
+    width:min(100%,396px);aspect-ratio:66.05/36;background:var(--label-bg);color:#111;
+    border:1px solid #cfc7b8;border-radius:4px;box-shadow:var(--shadow);
+    padding:.55rem .7rem;display:grid;grid-template-rows:auto 1fr auto;
+    font-family:var(--body);font-variant-numeric:tabular-nums;transform:rotate(-2deg)
+  }
+  .etiquette .cli{font-weight:700;color:#1d4ed8;font-size:.72rem;letter-spacing:.02em}
+  .etiquette .plat{font-weight:700;font-size:1.02rem;line-height:1.15;margin-top:.15rem}
+  .etiquette .alg{font-size:.7rem;margin-top:.15rem}
+  .etiquette .alg b{color:#b91c1c}
+  .etiquette .meta{display:grid;grid-template-columns:1fr auto;align-items:end;gap:.5rem;font-size:.66rem;line-height:1.35}
+  .etiquette .stamp{border:1.5px solid #111;border-radius:50%;padding:.2rem .55rem;font-size:.58rem;font-weight:700;text-align:center;line-height:1.1;white-space:nowrap}
+
+  /* approche */
+  .three{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  @media (max-width:760px){ .three{grid-template-columns:1fr} }
+  .pillar{display:grid;gap:.6rem;padding:1.6rem;border-radius:18px;background:var(--pois)}
+  .pillar h3{color:var(--green-ink)}
+  .pillar p{color:var(--muted);font-size:.98rem}
+  .pillar .num{font-family:var(--display);font-size:2.2rem;font-weight:600;color:var(--ink);line-height:1;font-variant-numeric:tabular-nums}
+
+  /* textures */
+  .textures{display:grid;grid-template-columns:repeat(5,1fr);gap:0;border:1px solid var(--line);border-radius:18px;overflow:hidden}
+  @media (max-width:900px){ .textures{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:520px){ .textures{grid-template-columns:1fr} }
+  .tex{padding:1.3rem 1.2rem;border-right:1px solid var(--line);border-bottom:1px solid var(--line);display:grid;gap:.35rem;align-content:start;background:var(--ground)}
+  .tex .age{font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;color:var(--orange-ink)}
+  .tex h3{font-size:1.15rem}
+  .tex p{font-size:.92rem;color:var(--muted)}
+  .tex .g{margin-top:.4rem;font-size:.85rem;font-variant-numeric:tabular-nums;color:var(--ink)}
+  .tex .g span{display:inline-block;background:var(--carotte);border-radius:6px;padding:.1rem .45rem;margin:.15rem .25rem 0 0}
+  .dot{width:38px;height:38px;border-radius:50%;background:var(--orange);margin-bottom:.4rem;position:relative;overflow:hidden}
+  .dot::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(circle at 30% 35%, rgba(255,255,255,.55) 0 var(--r,0), transparent calc(var(--r,0) + 1px)),
+    radial-gradient(circle at 68% 62%, rgba(255,255,255,.55) 0 var(--r,0), transparent calc(var(--r,0) + 1px)),
+    radial-gradient(circle at 42% 72%, rgba(255,255,255,.45) 0 var(--r2,0), transparent calc(var(--r2,0) + 1px))}
+  .textures-note{margin-top:1.2rem;color:var(--muted);font-size:.95rem;max-width:70ch}
+
+  /* menu du jour */
+  .jour{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.5rem,4vw,3rem);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--ground)}
+  @media (max-width:820px){ .jour{grid-template-columns:1fr} }
+  .jour-date{background:var(--pois);padding:clamp(1.6rem,3vw,2.4rem);display:grid;align-content:space-between;gap:1.5rem}
+  .jour-date .jd{font-family:var(--display);font-weight:600;font-size:clamp(2rem,4vw,3rem);line-height:1.05;color:var(--green-ink);text-wrap:balance}
+  .jour-date .jt{font-size:.95rem;color:var(--muted)}
+  .jour-date .jt b{color:var(--ink)}
+  .jour-list{margin:0;padding:clamp(1.6rem,3vw,2.4rem) clamp(1.6rem,3vw,2.4rem) clamp(1.6rem,3vw,2.4rem) 0;display:grid;gap:1rem}
+  @media (max-width:820px){ .jour-list{padding-left:clamp(1.6rem,3vw,2.4rem)} }
+  .jour-list div{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:baseline;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+  .jour-list div:last-child{border-bottom:0;padding-bottom:0}
+  .jour-list dt{font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-ink)}
+  .jour-list dd{margin:0;font-family:var(--display);font-weight:500;font-size:1.2rem;line-height:1.3}
+  .jour-list dd:empty::before{content:"—";color:var(--muted)}
+  .jour-note{margin-top:1rem;font-size:.9rem;color:var(--muted);max-width:70ch}
+  .jour-edit{margin-top:1.2rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
+  .jour-edit a{font-size:.85rem;color:var(--muted)}
+  dialog{border:0;border-radius:20px;padding:0;max-width:min(560px,calc(100% - 2rem));width:100%;background:var(--ground);color:var(--ink);box-shadow:var(--shadow)}
+  dialog::backdrop{background:rgba(20,30,22,.55)}
+  dialog form{padding:1.6rem}
+  dialog h3{font-size:1.5rem;margin-bottom:.3rem}
+  dialog .dlg-sub{font-size:.9rem;color:var(--muted);margin-bottom:1rem}
+  .dlg-actions{display:flex;justify-content:flex-end;gap:.8rem;align-items:center;flex-wrap:wrap}
+  .dlg-status{font-size:.85rem;color:var(--muted);margin-right:auto}
+
+  /* sécurité */
+  .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
+  @media (max-width:860px){ .split{grid-template-columns:1fr} }
+  .checks{list-style:none;padding:0;margin:0;display:grid;gap:1rem}
+  .checks li{display:grid;grid-template-columns:auto 1fr;gap:.9rem;align-items:start}
+  .checks li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--green);margin-top:.5rem}
+  .checks b{display:block}
+  .checks span{color:var(--muted);font-size:.97rem}
+  .variants{display:flex;flex-wrap:wrap;gap:.45rem;margin-top:.6rem}
+  .variants i{font-style:normal;font-size:.8rem;font-weight:700;background:var(--carotte);color:var(--orange-ink);border-radius:999px;padding:.25rem .7rem;letter-spacing:.03em}
+
+  /* publics */
+  .publics{display:grid;grid-template-columns:repeat(3,1fr);gap:1.4rem}
+  @media (max-width:760px){ .publics{grid-template-columns:1fr} }
+  .pub{padding:1.6rem;border:1px solid var(--line);border-radius:18px;display:grid;gap:.6rem;align-content:start}
+  .pub h3{color:var(--ink)}
+  .pub p{color:var(--muted);font-size:.97rem}
+  .pub .tag{font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--green-ink)}
+
+  /* engagements */
+  .engage{background:var(--carotte);border-radius:24px;padding:clamp(1.8rem,4vw,3rem);display:grid;grid-template-columns:1fr;gap:2rem}
+  .engage ul{max-width:62ch}
+  @media (max-width:860px){ .engage{grid-template-columns:1fr} }
+  .engage ul{margin:0;padding-left:1.2rem;display:grid;gap:.6rem;color:var(--ink)}
+
+  /* contact */
+  .contact{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(2rem,5vw,4rem)}
+  @media (max-width:860px){ .contact{grid-template-columns:1fr} }
+  .coord{display:grid;gap:1.1rem;align-content:start}
+  .coord div b{display:block;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;color:var(--orange-ink)}
+  .coord a{text-decoration:none;color:var(--ink);font-weight:600}
+  .coord a:hover{text-decoration:underline}
+  form{display:grid;gap:1rem}
+  .row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+  @media (max-width:560px){ .row{grid-template-columns:1fr} }
+  label{display:grid;gap:.35rem;font-weight:700;font-size:.9rem}
+  input,textarea,select{font:inherit;font-size:1rem;padding:.75rem .9rem;border:1.5px solid var(--line);border-radius:12px;background:var(--ground);color:var(--ink);width:100%}
+  input:hover,textarea:hover{border-color:var(--muted)}
+  textarea{min-height:130px;resize:vertical}
+  .form-note{font-size:.85rem;color:var(--muted)}
+
+  footer{border-top:1px solid var(--line);padding-block:2rem;font-size:.9rem;color:var(--muted)}
+  footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:1rem}
+</style>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top" aria-label="Breizhou, accueil">
+      <img src="data:image/png;base64,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" alt="" width="46" height="46">
+      <span>breizhou</span>
+    </a>
+    <nav aria-label="Sections">
+      <ul>
+        <li><a href="#cuisine">La cuisine</a></li>
+        <li><a href="#textures">Textures</a></li>
+        <li><a href="#menus">Menu du jour</a></li>
+        <li><a href="#securite">Traçabilité</a></li>
+        <li><a href="#publics">Écoles &amp; seniors</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-primary" href="https://breizhou.panierlocal.org/" rel="noopener">Commander</a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Cuisine centrale · Bréteil, Ille-et-Vilaine</p>
+        <h1>Les p'tits plats <em>frais d'ici</em>, cuisinés chaque matin pour les crèches</h1>
+        <p class="lede">Breizhou prépare des repas frais avec les légumes, les viandes et les laitages des fermes voisines. Ils partent le jour même vers les crèches, les écoles et les résidences seniors de Bretagne, prêts à réchauffer.</p>
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#contact">Demander un devis</a>
+          <a class="btn btn-ghost" href="#menus">Voir le menu du jour</a>
+        </div>
+        <div class="facts">
+          <p><b>Produits frais</b> des fermes du pays de Rennes</p>
+          <p><b>Livraison quotidienne</b> en liaison froide</p>
+          <p><b>Contenants inox</b> repris à chaque tournée</p>
+        </div>
+      </div>
+
+      <figure class="label-stage">
+        <div class="etiquette" aria-label="Exemple d'étiquette de traçabilité">
+          <div>
+            <div class="cli">CRÈCHE BREIZHOU · MENU GRAND</div>
+            <div class="plat">Purée de carottes &amp; émincé de poulet fermier</div>
+            <div class="alg">Allergènes : <b>AUCUN</b> · Poids : 115 g · Total : 12 × 115 g</div>
+          </div>
+          <div></div>
+          <div class="meta">
+            <div>Fabriqué le 28/08/2026 · DLC 31/08/2026<br>À conserver entre 0 et +3 °C · Réchauffer à cœur à +63 °C</div>
+            <div class="stamp">FR<br>35.040.001<br>CE</div>
+          </div>
+        </div>
+        <figcaption>Chaque barquette porte son étiquette : plat, allergènes, grammage, date de fabrication, DLC et estampille sanitaire.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section id="cuisine">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">La cuisine</p>
+        <h2>Un atelier de village, pas une usine</h2>
+        <p class="lede">Au 3 rue de Montfort, à Bréteil, l'équipe travaille comme à la maison : légumerie, cuisson, purées de fruits et de légumes maison. Rien ne vient d'une poche ni d'un bocal industriel.</p>
+      </div>
+      <div class="three">
+        <div class="pillar">
+          <span class="num">Local</span>
+          <h3>D'abord les fermes voisines</h3>
+          <p>Les produits viennent d'abord des producteurs du pays de Rennes. Nous connaissons leurs fermes, leurs saisons et leur façon de travailler.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">J-1</span>
+          <h3>Cuisiné la veille, livré le matin</h3>
+          <p>Les repas sont préparés le jour ouvrable qui précède la livraison, refroidis rapidement et livrés en liaison froide. La crèche n'a plus qu'à réchauffer.</p>
+        </div>
+        <div class="pillar">
+          <span class="num">0</span>
+          <h3>Barquette jetable</h3>
+          <p>Les repas voyagent dans des bacs inox consignés, repris et lavés à chaque tournée. Chaque ingrédient reste dans son bac pour garder son goût.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="textures">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Textures &amp; grammages</p>
+        <h2>Le même menu, cinq façons de le manger</h2>
+        <p class="lede">Un enfant de six mois et un enfant de trois ans ne mangent pas la même assiette. Chaque plat est décliné par tranche d'âge, avec sa texture et son grammage.</p>
+      </div>
+      <div class="textures">
+        <div class="tex"><div class="dot" style="--r:0px"></div><span class="age">Intro · dès 6 mois</span><h3>Lisse</h3><p>Purées mono-ingrédient pour la diversification, sans sel ni sucre ajouté.</p><div class="g"><span>Légume 100 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:3px;--r2:2px"></div><span class="age">Petit · 8–12 mois</span><h3>Mouliné</h3><p>Purée de légumes et protéine mixée séparément, féculent introduit en douceur.</p><div class="g"><span>Légume 100 g</span><span>Protéine 15 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:5px;--r2:4px"></div><span class="age">Moyen · 12–18 mois</span><h3>Écrasé</h3><p>Écrasé à la fourchette : premiers morceaux fondants, entrée découverte.</p><div class="g"><span>Entrée 20 g</span><span>Protéine 20 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:8px;--r2:6px"></div><span class="age">Grand · 18–24 mois</span><h3>Petits morceaux</h3><p>Le menu complet : entrée, plat, laitage, dessert. Les morceaux se mâchent.</p><div class="g"><span>Entrée 30 g</span><span>Féculent 90 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:11px;--r2:8px"></div><span class="age">Géant · 2–3 ans</span><h3>Morceaux</h3><p>Comme les grands, avec des portions qui suivent l'appétit. Fruit entier possible.</p><div class="g"><span>Entrée 40 g</span><span>Fruit 150 g</span></div></div>
+      </div>
+      <p class="textures-note">Les grammages suivent le registre de la cuisine, tranche par tranche. Ils sont indiqués sur chaque étiquette et servent de base au contrôle des allergènes et des régimes.</p>
+    </div>
+  </section>
+
+  <section id="menus">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Menu du jour</p>
+        <h2>Ce que les enfants mangent aujourd'hui</h2>
+        <p class="lede">Le menu est écrit par le chef à partir de ce que les fermes récoltent, puis décliné dans les cinq textures. Il est affiché ici chaque matin.</p>
+      </div>
+      <script type="application/json" id="menu-data">{"date":"Mercredi 9 septembre 2026","entree":"Betteraves râpées au citron","plat":"Émincé de poulet fermier","garniture":"Purée de carottes","laitage":"Emmental","dessert":"Compote pomme-poire maison","gouter":"Pain et fromage blanc","note":"Repas végétal : duo de lentilles vertes et carottes.","maj":"9 septembre 2026"}</script>
+      <div class="jour" id="jour"><!--MENU--><div class="jour-date"><p class="jd">Mercredi 9 septembre 2026</p><p class="jt"><b>Cuisiné à Bréteil</b><br>Mis à jour le 9 septembre 2026</p></div><dl class="jour-list"><div><dt>Entrée</dt><dd>Betteraves râpées au citron</dd></div><div><dt>Plat</dt><dd>Émincé de poulet fermier</dd></div><div><dt>Garniture</dt><dd>Purée de carottes</dd></div><div><dt>Laitage</dt><dd>Emmental</dd></div><div><dt>Dessert</dt><dd>Compote pomme-poire maison</dd></div><div><dt>Goûter</dt><dd>Pain et fromage blanc</dd></div><div><dt>À noter</dt><dd>Repas végétal : duo de lentilles vertes et carottes.</dd></div></dl><!--/MENU--></div>
+      <p class="jour-note">Sans porc, sans viande, sans poisson, sans lait, sans gluten, sans œuf, végétalien : chaque variante est prévue dès l'écriture du menu. Les allergènes figurent sur l'étiquette de chaque plat.</p>
+      <div class="jour-edit"><a href="#" id="edit-link" hidden>Mettre à jour le menu du jour</a></div>
+    </div>
+  </section>
+
+  <dialog id="dlg">
+    <form id="menu-form" method="dialog">
+      <h3>Menu du jour</h3>
+      <p class="dlg-sub">Ce que vous enregistrez remplace le menu affiché pour tous les visiteurs.</p>
+      <div style="display:grid;gap:.8rem">
+        <label>Date<input name="date" placeholder="Jeudi 10 septembre 2026" required></label>
+        <div class="row">
+          <label>Entrée<input name="entree"></label>
+          <label>Plat<input name="plat"></label>
+        </div>
+        <div class="row">
+          <label>Garniture<input name="garniture"></label>
+          <label>Laitage<input name="laitage"></label>
+        </div>
+        <div class="row">
+          <label>Dessert<input name="dessert"></label>
+          <label>Goûter<input name="gouter"></label>
+        </div>
+        <label>À noter<input name="note" placeholder="Variante végétale, remplacement, fruit du producteur…"></label>
+      </div>
+      <div class="dlg-actions" style="margin-top:1.2rem">
+        <span class="dlg-status" id="dlg-status"></span>
+        <button class="btn btn-ghost" type="button" id="dlg-cancel">Annuler</button>
+        <button class="btn btn-primary" type="submit" id="dlg-save">Publier le menu</button>
+      </div>
+    </form>
+  </dialog>
+
+  <section id="securite">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Traçabilité &amp; régimes</p>
+        <h2>Ce qui rassure une directrice de crèche</h2>
+      </div>
+      <div class="split">
+        <ul class="checks">
+          <li><div><b>Un atelier agréé</b><span>Cuisine agréée par les services sanitaires, estampille FR 35.040.001 CE. Plan de maîtrise sanitaire, relevés de température et échantillons témoins conservés pour chaque production.</span></div></li>
+          <li><div><b>Allergènes écrits sur chaque plat</b><span>Les 14 allergènes réglementaires sont déclarés sur l'étiquette de chaque barquette. Un plat sans allergène l'indique en toutes lettres.</span></div></li>
+          <li><div><b>Les PAI traités un par un</b><span>Un projet d'accueil individualisé donne lieu à une recette de remplacement nommée, pesée et étiquetée à part. Jamais « la même chose sans ».</span></div></li>
+          <li><div><b>Une DLC courte, assumée</b><span>Trois jours après fabrication. Les repas sont faits pour être mangés, pas stockés.</span></div></li>
+        </ul>
+        <div>
+          <p class="prose">Chaque commande passe par un contrôle avant impression des étiquettes : aucun plat ne part sans allergène renseigné, sans grammage, ni avec un régime particulier laissé au hasard. Les menus de remplacement sont tranchés avant la mise en production, pas au moment du service.</p>
+          <div class="variants" aria-label="Régimes prévus">
+            <i>SS PORC</i><i>SS VIANDE</i><i>SS POISSON</i><i>SS LAIT</i><i>SS GLUTEN</i><i>SS ŒUF</i><i>SS FRUIT À COQUE</i><i>VÉGÉTALIEN</i><i>PAI</i><i>PETITE FAIM</i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="publics">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Pour qui</p>
+        <h2>Des crèches d'abord, et tous ceux qui mangent à la collectivité</h2>
+      </div>
+      <div class="publics">
+        <div class="pub"><span class="tag">Crèches &amp; micro-crèches</span><h3>Le cœur du métier</h3><p>Repas complets ou composantes à l'unité, en cinq textures. Commande en ligne, ajustable jusqu'à la veille. Structures publiques comme privées, de la micro-crèche au multi-accueil.</p></div>
+        <div class="pub"><span class="tag">Écoles &amp; accueils de loisirs</span><h3>Maternelle et élémentaire</h3><p>Les mêmes recettes avec des grammages scolaires, et un menu adulte pour les équipes. Nous répondons aux marchés publics de restauration scolaire des communes et groupements.</p></div>
+        <div class="pub"><span class="tag">Seniors</span><h3>Résidences et portage</h3><p>Assiette entière servie en une seule ligne : plat complet, garniture seule ou potage, avec des textures adaptées à la mastication et des grammages seniors.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="engagements">
+    <div class="wrap">
+      <div class="engage">
+        <div>
+          <p class="eyebrow">Engagements</p>
+          <h2 style="margin:.6rem 0 1.2rem">Une entreprise de l'économie sociale et solidaire</h2>
+          <ul>
+            <li>Née en 2018 à Bréteil, lauréate du concours InnovaBio la même année.</li>
+            <li>Crèches, producteurs et familles associés aux décisions.</li>
+            <li>Approvisionnement en circuit court auprès des fermes bio du pays de Rennes.</li>
+            <li>Zéro plastique jetable : bacs inox consignés et lavés à la cuisine.</li>
+            <li>Surplus pesés et suivis chaque jour pour ajuster les productions.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="sec-head">
+        <p class="eyebrow">Contact</p>
+        <h2>Parlons de vos repas</h2>
+        <p class="lede">Une crèche qui ouvre, une commune qui prépare son appel d'offres, une résidence qui cherche un traiteur : écrivez-nous, nous répondons sous deux jours ouvrés.</p>
+      </div>
+      <div class="contact">
+        <div class="coord">
+          <div><b>Adresse</b><a href="https://www.openstreetmap.org/search?query=3%20rue%20de%20Montfort%2035160%20Br%C3%A9teil" rel="noopener">3 rue de Montfort<br>35160 Bréteil</a></div>
+          <div><b>Téléphone</b><a href="tel:+33631331155">06 31 33 11 55</a></div>
+          <div><b>E-mail</b><a href="mailto:info.breizhou@gmail.com">info.breizhou@gmail.com</a></div>
+          <div><b>Commandes</b><a href="https://breizhou.panierlocal.org/" rel="noopener">breizhou.panierlocal.org</a></div>
+        </div>
+        <form id="f" novalidate>
+          <div class="row">
+            <label>Votre nom<input name="nom" autocomplete="name" required></label>
+            <label>Structure<input name="structure" placeholder="Crèche, mairie, résidence…" autocomplete="organization"></label>
+          </div>
+          <div class="row">
+            <label>E-mail<input name="email" type="email" autocomplete="email" required></label>
+            <label>Nombre de repas par jour<input name="repas" inputmode="numeric" placeholder="ex. 24"></label>
+          </div>
+          <label>Votre demande<textarea name="message" placeholder="Textures souhaitées, jours de livraison, régimes particuliers…"></textarea></label>
+          <div>
+            <button class="btn btn-primary" type="submit">Envoyer la demande</button>
+            <p class="form-note" id="note" style="margin-top:.7rem">Le bouton ouvre votre messagerie avec la demande pré-remplie.</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Breizhou SAS · 3 rue de Montfort, 35160 Bréteil · Cuisine agréée FR 35.040.001 CE</p>
+    <p><a href="#top">Haut de page</a></p>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('f').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var d = new FormData(this), lines = [];
+    ['nom','structure','email','repas'].forEach(function (k) { if (d.get(k)) lines.push(k.charAt(0).toUpperCase() + k.slice(1) + ' : ' + d.get(k)); });
+    if (d.get('message')) lines.push('', d.get('message'));
+    var sujet = 'Demande de devis' + (d.get('structure') ? ' — ' + d.get('structure') : '');
+    window.location.href = 'mailto:info.breizhou@gmail.com?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(lines.join('\n'));
+    document.getElementById('note').textContent = 'Votre messagerie s\'ouvre. Si rien ne se passe, écrivez à info.breizhou@gmail.com.';
+  });
+
+  /* ---- Menu du jour : le responsable le met à jour depuis la page publiée ---- */
+  (function () {
+    var esc = function (t) { return String(t || '').replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
+    var LIGNES = [['entree','Entrée'],['plat','Plat'],['garniture','Garniture'],['laitage','Laitage'],['dessert','Dessert'],['gouter','Goûter'],['note','À noter']];
+    function rendu(m) {
+      var rows = LIGNES.filter(function (l) { return m[l[0]]; }).map(function (l) {
+        return '<div><dt>' + l[1] + '</dt><dd>' + esc(m[l[0]]) + '</dd></div>';
+      }).join('');
+      return '<div class="jour-date"><p class="jd">' + esc(m.date) + '</p><p class="jt"><b>Cuisiné à Bréteil</b><br>Mis à jour le ' + esc(m.maj) + '</p></div><dl class="jour-list">' + rows + '</dl>';
+    }
+    function dateFr(d) { return d.toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'}); }
+    function demain() { var d = new Date(); d.setDate(d.getDate() + (d.getDay() === 5 ? 3 : 1)); var t = d.toLocaleDateString('fr-FR', {weekday:'long', day:'numeric', month:'long', year:'numeric'}); return t.charAt(0).toUpperCase() + t.slice(1); }
+
+    var link = document.getElementById('edit-link'), dlg = document.getElementById('dlg'),
+        form = document.getElementById('menu-form'), status = document.getElementById('dlg-status'),
+        save = document.getElementById('dlg-save');
+    var lectureSeule = false;
+    try { lectureSeule = localStorage.getItem('breizhou-menu-ro') === '1'; } catch (e) {}
+    if (!window.claude || typeof window.claude.use !== 'function' || lectureSeule) return;
+
+    window.claude.use('artifact').then(function (art) {
+      if (!art) return;
+      link.hidden = false;
+      link.addEventListener('click', function (e) {
+        e.preventDefault();
+        var m = JSON.parse(document.getElementById('menu-data').textContent);
+        Object.keys(m).forEach(function (k) { if (form.elements[k]) form.elements[k].value = m[k]; });
+        form.elements.date.value = demain();
+        status.textContent = '';
+        dlg.showModal();
+      });
+      document.getElementById('dlg-cancel').addEventListener('click', function () { dlg.close(); });
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        var m = {}; new FormData(form).forEach(function (v, k) { m[k] = String(v).trim(); });
+        m.maj = dateFr(new Date());
+        save.disabled = true; status.textContent = 'Publication…';
+        fetch(location.href, {cache: 'no-store'}).then(function (r) { return r.text(); }).then(function (src) {
+          if (src.indexOf('<!--MENU-->') < 0 || src.indexOf('id="menu-data">') < 0) throw {code: 'invalid_content'};
+          var html = src
+            .replace(/(id="menu-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + JSON.stringify(m).replace(/</g, '\\u003c') + b; })
+            .replace(/<!--MENU-->[\s\S]*?<!--\/MENU-->/, '<!--MENU-->' + rendu(m) + '<!--/MENU-->');
+          if (!/^\s*<!doctype html>/i.test(html)) html = '<!doctype html>\n' + html;
+          return art.publish(html);
+        }).then(function () {
+          status.textContent = 'Menu publié. La page se recharge.';
+        }).catch(function (err) {
+          save.disabled = false;
+          var code = err && err.code;
+          if (code === 'not_writer' || code === 'not_granted' || code === 'not_declared') {
+            try { localStorage.setItem('breizhou-menu-ro', '1'); } catch (e2) {}
+            status.textContent = 'Cette vue est en lecture seule.'; link.hidden = true;
+          } else if (code === 'conflict') {
+            status.textContent = 'Une version plus récente vient d\'être publiée, la page se recharge.';
+          } else if (code === 'rate_limited') {
+            status.textContent = 'Trop de publications d\'affilée. Réessayez dans une minute.';
+          } else {
+            status.textContent = 'La publication a échoué. Réessayez, ou écrivez-nous.';
+          }
+        });
+      });
+    });
+  })();
+</script>
