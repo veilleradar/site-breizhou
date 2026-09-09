@@ -147,29 +147,33 @@
   .textures-note{margin-top:1.2rem;color:var(--muted);font-size:.95rem;max-width:70ch}
 
   /* menu du jour */
-  .jour{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(1.5rem,4vw,3rem);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--ground)}
+  .jour{display:grid;grid-template-columns:.8fr 1.2fr;gap:clamp(1.5rem,4vw,3rem);border:1px solid var(--line);border-radius:24px;overflow:hidden;background:var(--ground)}
   @media (max-width:820px){ .jour{grid-template-columns:1fr} }
   .jour-date{background:var(--pois);padding:clamp(1.6rem,3vw,2.4rem);display:grid;align-content:space-between;gap:1.5rem}
   .jour-date .jd{font-family:var(--display);font-weight:600;font-size:clamp(2rem,4vw,3rem);line-height:1.05;color:var(--green-ink);text-wrap:balance}
   .jour-date .jt{font-size:.95rem;color:var(--muted)}
   .jour-date .jt b{color:var(--ink)}
-  .jour-list{margin:0;padding:clamp(1.6rem,3vw,2.4rem) clamp(1.6rem,3vw,2.4rem) clamp(1.6rem,3vw,2.4rem) 0;display:grid;gap:1rem}
+  .jour-list{margin:0;padding:clamp(1.6rem,3vw,2.4rem) clamp(1.6rem,3vw,2.4rem) clamp(1.6rem,3vw,2.4rem) 0;display:grid;gap:.9rem}
   @media (max-width:820px){ .jour-list{padding-left:clamp(1.6rem,3vw,2.4rem)} }
-  .jour-list div{display:grid;grid-template-columns:7.5rem 1fr;gap:1rem;align-items:baseline;padding-bottom:1rem;border-bottom:1px solid var(--line)}
+  .jour-list div{display:grid;grid-template-columns:8.5rem 1fr;gap:1rem;align-items:start;padding-bottom:.9rem;border-bottom:1px solid var(--line)}
   .jour-list div:last-child{border-bottom:0;padding-bottom:0}
-  .jour-list dt{font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-ink)}
-  .jour-list dd{margin:0;font-family:var(--display);font-weight:500;font-size:1.2rem;line-height:1.3}
-  .jour-list dd:empty::before{content:"—";color:var(--muted)}
-  .jour-note{margin-top:1rem;font-size:.9rem;color:var(--muted);max-width:70ch}
-  .jour-edit{margin-top:1.2rem;display:flex;flex-wrap:wrap;align-items:center;gap:1rem}
-  .jour-edit a{font-size:.85rem;color:var(--muted)}
-  dialog{border:0;border-radius:20px;padding:0;max-width:min(560px,calc(100% - 2rem));width:100%;background:var(--ground);color:var(--ink);box-shadow:var(--shadow)}
-  dialog::backdrop{background:rgba(20,30,22,.55)}
-  dialog form{padding:1.6rem}
-  dialog h3{font-size:1.5rem;margin-bottom:.3rem}
-  dialog .dlg-sub{font-size:.9rem;color:var(--muted);margin-bottom:1rem}
-  .dlg-actions{display:flex;justify-content:flex-end;gap:.8rem;align-items:center;flex-wrap:wrap}
-  .dlg-status{font-size:.85rem;color:var(--muted);margin-right:auto}
+  .jour-list dt{font-weight:700;font-size:.8rem;letter-spacing:.1em;text-transform:uppercase;color:var(--orange-ink);padding-top:.2rem}
+  .jour-list dt small,table.menu tbody th small{display:block;font-weight:400;font-size:.75rem;letter-spacing:0;text-transform:none;color:var(--muted);margin-top:.1rem;white-space:normal}
+  .jour-list dd{margin:0;font-family:var(--display);font-weight:500;font-size:1.05rem;line-height:1.45}
+  .veggie{display:inline-block;vertical-align:middle;font-family:var(--body);font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;background:var(--green);color:#fff;border-radius:999px;padding:.2rem .6rem;margin-left:.4rem}
+  .sem-head{margin-top:3rem;margin-bottom:1.2rem;display:grid;gap:.4rem}
+  .sem-head h3{font-size:1.5rem}
+  .sem-head p{color:var(--muted);max-width:70ch}
+  .menu-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:18px;background:var(--ground)}
+  table.menu{border-collapse:collapse;width:100%;min-width:820px;font-size:.92rem}
+  table.menu th,table.menu td{padding:.8rem .9rem;text-align:left;vertical-align:top;border-bottom:1px solid var(--line);line-height:1.45}
+  table.menu td+td,table.menu th+th{border-left:1px solid var(--line)}
+  table.menu thead th{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--green-ink);background:var(--pois);border-bottom:2px solid var(--green)}
+  table.menu tbody th{font-family:var(--display);font-weight:600;font-size:1.05rem;color:var(--ink);width:9.5rem;background:var(--carotte)}
+  table.menu tbody tr:last-child td,table.menu tbody tr:last-child th{border-bottom:0}
+  table.menu td.today{background:var(--pois)}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+  .jour-note{margin-top:1.2rem;font-size:.9rem;color:var(--muted);max-width:70ch}
 
   /* sécurité */
   .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,5vw,4rem);align-items:start}
@@ -226,7 +230,7 @@
       <ul>
         <li><a href="#cuisine">La cuisine</a></li>
         <li><a href="#textures">Textures</a></li>
-        <li><a href="#menus">Menu du jour</a></li>
+        <li><a href="#menus">Menus</a></li>
         <li><a href="#securite">Traçabilité</a></li>
         <li><a href="#publics">Écoles &amp; seniors</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -245,7 +249,7 @@
         <p class="lede">Breizhou prépare des repas frais avec les légumes, les viandes et les laitages des fermes voisines. Ils partent le jour même vers les crèches, les écoles et les résidences seniors de Bretagne, prêts à réchauffer.</p>
         <div class="hero-cta">
           <a class="btn btn-primary" href="#contact">Demander un devis</a>
-          <a class="btn btn-ghost" href="#menus">Voir le menu du jour</a>
+          <a class="btn btn-ghost" href="#menus">Voir les menus</a>
         </div>
         <div class="facts">
           <p><b>Produits frais</b> des fermes du pays de Rennes</p>
@@ -307,11 +311,11 @@
         <p class="lede">Un enfant de six mois et un enfant de trois ans ne mangent pas la même assiette. Chaque plat est décliné par tranche d'âge, avec sa texture et son grammage.</p>
       </div>
       <div class="textures">
-        <div class="tex"><div class="dot" style="--r:0px"></div><span class="age">Intro · dès 6 mois</span><h3>Lisse</h3><p>Purées mono-ingrédient pour la diversification, sans sel ni sucre ajouté.</p><div class="g"><span>Légume 100 g</span></div></div>
-        <div class="tex"><div class="dot" style="--r:3px;--r2:2px"></div><span class="age">Petit · 8–12 mois</span><h3>Mouliné</h3><p>Purée de légumes et protéine mixée séparément, féculent introduit en douceur.</p><div class="g"><span>Légume 100 g</span><span>Protéine 15 g</span></div></div>
-        <div class="tex"><div class="dot" style="--r:5px;--r2:4px"></div><span class="age">Moyen · 12–18 mois</span><h3>Écrasé</h3><p>Écrasé à la fourchette : premiers morceaux fondants, entrée découverte.</p><div class="g"><span>Entrée 20 g</span><span>Protéine 20 g</span></div></div>
-        <div class="tex"><div class="dot" style="--r:8px;--r2:6px"></div><span class="age">Grand · 18–24 mois</span><h3>Petits morceaux</h3><p>Le menu complet : entrée, plat, laitage, dessert. Les morceaux se mâchent.</p><div class="g"><span>Entrée 30 g</span><span>Féculent 90 g</span></div></div>
-        <div class="tex"><div class="dot" style="--r:11px;--r2:8px"></div><span class="age">Géant · 2–3 ans</span><h3>Morceaux</h3><p>Comme les grands, avec des portions qui suivent l'appétit. Fruit entier possible.</p><div class="g"><span>Entrée 40 g</span><span>Fruit 150 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:0px"></div><span class="age">Intro · premières purées</span><h3>Lisse</h3><p>Mixés d'un seul légume ou d'un seul fruit pour découvrir les goûts, sans sel ni sucre ajouté.</p><div class="g"><span>Légume 100 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:3px;--r2:2px"></div><span class="age">Petit · dès 6 mois</span><h3>Mouliné</h3><p>Purée fine de légumes, viande ou poisson mixé à part, purée de fruits.</p><div class="g"><span>Légume 100 g</span><span>Protéine 15 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:5px;--r2:4px"></div><span class="age">Moyen · dès 9 mois</span><h3>Écrasé</h3><p>Légumes en purée fine, viande moulinée : les premières textures qui se mâchent.</p><div class="g"><span>Entrée 20 g</span><span>Protéine 20 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:8px;--r2:6px"></div><span class="age">Grand · dès 12 mois</span><h3>Petits morceaux</h3><p>Le menu complet en petits morceaux fondants : légumes, plat, laitage, dessert.</p><div class="g"><span>Entrée 30 g</span><span>Féculent 90 g</span></div></div>
+        <div class="tex"><div class="dot" style="--r:11px;--r2:8px"></div><span class="age">Géant · dès 18 mois</span><h3>Morceaux</h3><p>Comme les grands, avec une entrée à croquer et des morceaux plus francs.</p><div class="g"><span>Entrée 40 g</span><span>Fruit 150 g</span></div></div>
       </div>
       <p class="textures-note">Les grammages suivent le registre de la cuisine, tranche par tranche. Ils sont indiqués sur chaque étiquette et servent de base au contrôle des allergènes et des régimes.</p>
     </div>
@@ -320,44 +324,21 @@
   <section id="menus">
     <div class="wrap">
       <div class="sec-head">
-        <p class="eyebrow">Menu du jour</p>
+        <p class="eyebrow">Menus</p>
         <h2>Ce que les enfants mangent aujourd'hui</h2>
-        <p class="lede">Le menu est écrit par le chef à partir de ce que les fermes récoltent, puis décliné dans les cinq textures. Il est affiché ici chaque matin.</p>
+        <p class="lede">Le menu est écrit par le chef à partir de ce que les fermes récoltent, puis décliné dans chaque texture. Le jeudi est végétarien.</p>
       </div>
-      <script type="application/json" id="menu-data">{"date":"Mercredi 9 septembre 2026","entree":"Betteraves râpées au citron","plat":"Émincé de poulet fermier","garniture":"Purée de carottes","laitage":"Emmental","dessert":"Compote pomme-poire maison","gouter":"Pain et fromage blanc","note":"Repas végétal : duo de lentilles vertes et carottes.","maj":"9 septembre 2026"}</script>
-      <div class="jour" id="jour"><!--MENU--><div class="jour-date"><p class="jd">Mercredi 9 septembre 2026</p><p class="jt"><b>Cuisiné à Bréteil</b><br>Mis à jour le 9 septembre 2026</p></div><dl class="jour-list"><div><dt>Entrée</dt><dd>Betteraves râpées au citron</dd></div><div><dt>Plat</dt><dd>Émincé de poulet fermier</dd></div><div><dt>Garniture</dt><dd>Purée de carottes</dd></div><div><dt>Laitage</dt><dd>Emmental</dd></div><div><dt>Dessert</dt><dd>Compote pomme-poire maison</dd></div><div><dt>Goûter</dt><dd>Pain et fromage blanc</dd></div><div><dt>À noter</dt><dd>Repas végétal : duo de lentilles vertes et carottes.</dd></div></dl><!--/MENU--></div>
+      <script type="application/json" id="menu-data">{"titre": "Semaine du 7 au 11 septembre 2026", "note": "Le menu peut varier selon les disponibilités des producteurs.", "textures": [["intro", "Intro", "premières purées"], ["petit", "Petit", "dès 6 mois"], ["moyen", "Moyen", "dès 9 mois"], ["grand", "Grand", "dès 12 mois, début des morceaux"], ["geant", "Géant", "dès 18 mois, à l'aise avec les morceaux"], ["gouter", "Goûter", "1, 2 ou 3 au choix"]], "jours": [{"nom": "Lundi", "date": "Lundi 7 septembre 2026", "veggie": false, "intro": ["Mixé de céleri", "Mixé de pommes"], "petit": ["Purée fine de céleri", "Mixé de veau", "Purée de pommes"], "moyen": ["Purée fine de céleri", "Mouliné de veau", "Purée de pommes"], "grand": ["Colombo de veau", "Céleri fondant à la tomate", "Pomme de terre", "Emmental", "Purée de pommes"], "geant": ["Betteraves vinaigrette", "Colombo de veau", "Céleri fondant à la tomate", "Pomme de terre", "Emmental", "Purée de pommes"], "gouter": ["Purée de fruit", "Biscuit", "Yaourt"]}, {"nom": "Mardi", "date": "Mardi 8 septembre 2026", "veggie": false, "intro": ["Mixé provençal", "Mixé de prunes"], "petit": ["Purée fine provençale", "Mixé d'œufs durs", "Purée pommes-prunes"], "moyen": ["Purée fine provençale", "Mouliné d'œufs durs", "Purée pommes-prunes"], "grand": ["Concombres à croquer", "Omelette aux herbes", "Ratatouille", "Semoule de blé tendre", "Yaourt", "Fruits de saison"], "geant": ["Concombres à croquer", "Omelette aux herbes", "Ratatouille", "Semoule de blé tendre", "Yaourt", "Fruits de saison"], "gouter": ["Fruit de saison ou purée de fruit", "Pain de mie", "Fromage frais"]}, {"nom": "Mercredi", "date": "Mercredi 9 septembre 2026", "veggie": false, "intro": ["Mixé de haricots verts", "Mixé de bananes"], "petit": ["Purée fine de haricots verts", "Mixé de poulet", "Purée bananes-framboises"], "moyen": ["Purée fine de haricots verts", "Mouliné de poulet", "Purée bananes-framboises"], "grand": ["Haricots verts à l'échalote", "Sauté de poulet au citron", "Quinoa & millet", "Fromage blanc", "Purée bananes-framboises"], "geant": ["Pastèque", "Haricots verts à l'échalote", "Sauté de poulet au citron", "Quinoa & millet", "Fromage blanc", "Purée bananes-framboises"], "gouter": ["Fruit de saison ou purée de fruit", "Gâteau du chef", "Lait entier"]}, {"nom": "Jeudi", "date": "Jeudi 10 septembre 2026", "veggie": true, "intro": ["Mixé de carottes", "Mixé de pom'dattes"], "petit": ["Purée fine de carottes", "Crème de lentilles", "Purée pom'dattes"], "moyen": ["Mouliné de carottes", "Méli-mélo blé et lentilles", "Purée pom'dattes"], "grand": ["Blésotto de lentilles vertes", "Carottes fondantes", "Saint-Paulin", "Fruits de saison"], "geant": ["Taboulé de saison", "Blésotto de lentilles vertes", "Carottes fondantes", "Saint-Paulin", "Fruits de saison"], "gouter": ["Fruit de saison ou purée de fruit", "Pain complet", "Kiri"]}, {"nom": "Vendredi", "date": "Vendredi 11 septembre 2026", "veggie": false, "intro": ["Mixé d'aubergines", "Mixé de mûres"], "petit": ["Purée fine d'aubergines", "Mixé de poissons", "Purée pom'mûres"], "moyen": ["Purée fine d'aubergines", "Mouliné de poissons", "Purée pom'mûres"], "grand": ["Melon", "Filet de poisson au citron frais", "Gratin aubergines, pommes de terre, tomates", "Petits-suisses nature", "Far breton"], "geant": ["Melon", "Filet de poisson au citron frais", "Gratin aubergines, pommes de terre, tomates", "Petits-suisses nature", "Far breton"], "gouter": ["Fruit de saison ou purée de fruit", "Galette de riz", "Vache qui rit"]}]}</script>
+      <div class="jour" id="jour"><!--MENU--><div class="jour-date"><p class="jd">Mercredi 9 septembre 2026</p><p class="jt"><b>Cuisiné à Bréteil</b><br>Semaine du 7 au 11 septembre 2026</p></div><dl class="jour-list"><div><dt>Intro<small>premières purées</small></dt><dd>Mixé de haricots verts<br>Mixé de bananes</dd></div><div><dt>Petit<small>dès 6 mois</small></dt><dd>Purée fine de haricots verts<br>Mixé de poulet<br>Purée bananes-framboises</dd></div><div><dt>Moyen<small>dès 9 mois</small></dt><dd>Purée fine de haricots verts<br>Mouliné de poulet<br>Purée bananes-framboises</dd></div><div><dt>Grand<small>dès 12 mois, début des morceaux</small></dt><dd>Haricots verts à l'échalote<br>Sauté de poulet au citron<br>Quinoa &amp; millet<br>Fromage blanc<br>Purée bananes-framboises</dd></div><div><dt>Géant<small>dès 18 mois, à l'aise avec les morceaux</small></dt><dd>Pastèque<br>Haricots verts à l'échalote<br>Sauté de poulet au citron<br>Quinoa &amp; millet<br>Fromage blanc<br>Purée bananes-framboises</dd></div><div><dt>Goûter<small>1, 2 ou 3 au choix</small></dt><dd>Fruit de saison ou purée de fruit<br>Gâteau du chef<br>Lait entier</dd></div></dl><!--/MENU--></div>
+
+      <div class="sem-head">
+        <h3 id="sem-titre">Semaine du 7 au 11 septembre 2026</h3>
+        <p>Toutes les textures, du lundi au vendredi. Le menu peut varier selon les disponibilités des producteurs.</p>
+      </div>
+      <div class="menu-wrap"><table class="menu"><thead><tr><th scope="col"><span class="sr">Texture</span></th><th scope="col">Lundi</th><th scope="col">Mardi</th><th scope="col">Mercredi</th><th scope="col">Jeudi <span class="veggie">Veggie</span></th><th scope="col">Vendredi</th></tr></thead><tbody><tr><th scope="row">Intro<small>premières purées</small></th><td>Mixé de céleri<br>Mixé de pommes</td><td>Mixé provençal<br>Mixé de prunes</td><td>Mixé de haricots verts<br>Mixé de bananes</td><td>Mixé de carottes<br>Mixé de pom'dattes</td><td>Mixé d'aubergines<br>Mixé de mûres</td></tr><tr><th scope="row">Petit<small>dès 6 mois</small></th><td>Purée fine de céleri<br>Mixé de veau<br>Purée de pommes</td><td>Purée fine provençale<br>Mixé d'œufs durs<br>Purée pommes-prunes</td><td>Purée fine de haricots verts<br>Mixé de poulet<br>Purée bananes-framboises</td><td>Purée fine de carottes<br>Crème de lentilles<br>Purée pom'dattes</td><td>Purée fine d'aubergines<br>Mixé de poissons<br>Purée pom'mûres</td></tr><tr><th scope="row">Moyen<small>dès 9 mois</small></th><td>Purée fine de céleri<br>Mouliné de veau<br>Purée de pommes</td><td>Purée fine provençale<br>Mouliné d'œufs durs<br>Purée pommes-prunes</td><td>Purée fine de haricots verts<br>Mouliné de poulet<br>Purée bananes-framboises</td><td>Mouliné de carottes<br>Méli-mélo blé et lentilles<br>Purée pom'dattes</td><td>Purée fine d'aubergines<br>Mouliné de poissons<br>Purée pom'mûres</td></tr><tr><th scope="row">Grand<small>dès 12 mois, début des morceaux</small></th><td>Colombo de veau<br>Céleri fondant à la tomate<br>Pomme de terre<br>Emmental<br>Purée de pommes</td><td>Concombres à croquer<br>Omelette aux herbes<br>Ratatouille<br>Semoule de blé tendre<br>Yaourt<br>Fruits de saison</td><td>Haricots verts à l'échalote<br>Sauté de poulet au citron<br>Quinoa &amp; millet<br>Fromage blanc<br>Purée bananes-framboises</td><td>Blésotto de lentilles vertes<br>Carottes fondantes<br>Saint-Paulin<br>Fruits de saison</td><td>Melon<br>Filet de poisson au citron frais<br>Gratin aubergines, pommes de terre, tomates<br>Petits-suisses nature<br>Far breton</td></tr><tr><th scope="row">Géant<small>dès 18 mois, à l'aise avec les morceaux</small></th><td>Betteraves vinaigrette<br>Colombo de veau<br>Céleri fondant à la tomate<br>Pomme de terre<br>Emmental<br>Purée de pommes</td><td>Concombres à croquer<br>Omelette aux herbes<br>Ratatouille<br>Semoule de blé tendre<br>Yaourt<br>Fruits de saison</td><td>Pastèque<br>Haricots verts à l'échalote<br>Sauté de poulet au citron<br>Quinoa &amp; millet<br>Fromage blanc<br>Purée bananes-framboises</td><td>Taboulé de saison<br>Blésotto de lentilles vertes<br>Carottes fondantes<br>Saint-Paulin<br>Fruits de saison</td><td>Melon<br>Filet de poisson au citron frais<br>Gratin aubergines, pommes de terre, tomates<br>Petits-suisses nature<br>Far breton</td></tr><tr><th scope="row">Goûter<small>1, 2 ou 3 au choix</small></th><td>Purée de fruit<br>Biscuit<br>Yaourt</td><td>Fruit de saison ou purée de fruit<br>Pain de mie<br>Fromage frais</td><td>Fruit de saison ou purée de fruit<br>Gâteau du chef<br>Lait entier</td><td>Fruit de saison ou purée de fruit<br>Pain complet<br>Kiri</td><td>Fruit de saison ou purée de fruit<br>Galette de riz<br>Vache qui rit</td></tr></tbody></table></div>
       <p class="jour-note">Sans porc, sans viande, sans poisson, sans lait, sans gluten, sans œuf, végétalien : chaque variante est prévue dès l'écriture du menu. Les allergènes figurent sur l'étiquette de chaque plat.</p>
-      <div class="jour-edit"><a href="#" id="edit-link" hidden>Mettre à jour le menu du jour</a></div>
     </div>
   </section>
-
-  <dialog id="dlg">
-    <form id="menu-form" method="dialog">
-      <h3>Menu du jour</h3>
-      <p class="dlg-sub">Ce que vous enregistrez remplace le menu affiché pour tous les visiteurs.</p>
-      <div style="display:grid;gap:.8rem">
-        <label>Date<input name="date" placeholder="Jeudi 10 septembre 2026" required></label>
-        <div class="row">
-          <label>Entrée<input name="entree"></label>
-          <label>Plat<input name="plat"></label>
-        </div>
-        <div class="row">
-          <label>Garniture<input name="garniture"></label>
-          <label>Laitage<input name="laitage"></label>
-        </div>
-        <div class="row">
-          <label>Dessert<input name="dessert"></label>
-          <label>Goûter<input name="gouter"></label>
-        </div>
-        <label>À noter<input name="note" placeholder="Variante végétale, remplacement, fruit du producteur…"></label>
-      </div>
-      <div class="dlg-actions" style="margin-top:1.2rem">
-        <span class="dlg-status" id="dlg-status"></span>
-        <button class="btn btn-ghost" type="button" id="dlg-cancel">Annuler</button>
-        <button class="btn btn-primary" type="submit" id="dlg-save">Publier le menu</button>
-      </div>
-    </form>
-  </dialog>
 
   <section id="securite">
     <div class="wrap">
@@ -466,68 +447,20 @@
     document.getElementById('note').textContent = 'Votre messagerie s\'ouvre. Si rien ne se passe, écrivez à info.breizhou@gmail.com.';
   });
 
-  /* ---- Menu du jour : le responsable le met à jour depuis la page publiée ---- */
+  /* ---- Menu du jour : suit le jour de la semaine à partir du tableau ---- */
   (function () {
     var esc = function (t) { return String(t || '').replace(/[&<>"]/g, function (c) { return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); };
-    var LIGNES = [['entree','Entrée'],['plat','Plat'],['garniture','Garniture'],['laitage','Laitage'],['dessert','Dessert'],['gouter','Goûter'],['note','À noter']];
-    function rendu(m) {
-      var rows = LIGNES.filter(function (l) { return m[l[0]]; }).map(function (l) {
-        return '<div><dt>' + l[1] + '</dt><dd>' + esc(m[l[0]]) + '</dd></div>';
-      }).join('');
-      return '<div class="jour-date"><p class="jd">' + esc(m.date) + '</p><p class="jt"><b>Cuisiné à Bréteil</b><br>Mis à jour le ' + esc(m.maj) + '</p></div><dl class="jour-list">' + rows + '</dl>';
-    }
-    function dateFr(d) { return d.toLocaleDateString('fr-FR', {day:'numeric', month:'long', year:'numeric'}); }
-    function demain() { var d = new Date(); d.setDate(d.getDate() + (d.getDay() === 5 ? 3 : 1)); var t = d.toLocaleDateString('fr-FR', {weekday:'long', day:'numeric', month:'long', year:'numeric'}); return t.charAt(0).toUpperCase() + t.slice(1); }
-
-    var link = document.getElementById('edit-link'), dlg = document.getElementById('dlg'),
-        form = document.getElementById('menu-form'), status = document.getElementById('dlg-status'),
-        save = document.getElementById('dlg-save');
-    var lectureSeule = false;
-    try { lectureSeule = localStorage.getItem('breizhou-menu-ro') === '1'; } catch (e) {}
-    if (!window.claude || typeof window.claude.use !== 'function' || lectureSeule) return;
-
-    window.claude.use('artifact').then(function (art) {
-      if (!art) return;
-      link.hidden = false;
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        var m = JSON.parse(document.getElementById('menu-data').textContent);
-        Object.keys(m).forEach(function (k) { if (form.elements[k]) form.elements[k].value = m[k]; });
-        form.elements.date.value = demain();
-        status.textContent = '';
-        dlg.showModal();
-      });
-      document.getElementById('dlg-cancel').addEventListener('click', function () { dlg.close(); });
-
-      form.addEventListener('submit', function (e) {
-        e.preventDefault();
-        var m = {}; new FormData(form).forEach(function (v, k) { m[k] = String(v).trim(); });
-        m.maj = dateFr(new Date());
-        save.disabled = true; status.textContent = 'Publication…';
-        fetch(location.href, {cache: 'no-store'}).then(function (r) { return r.text(); }).then(function (src) {
-          if (src.indexOf('<!--MENU-->') < 0 || src.indexOf('id="menu-data">') < 0) throw {code: 'invalid_content'};
-          var html = src
-            .replace(/(id="menu-data">)[\s\S]*?(<\/script>)/, function (_, a, b) { return a + JSON.stringify(m).replace(/</g, '\\u003c') + b; })
-            .replace(/<!--MENU-->[\s\S]*?<!--\/MENU-->/, '<!--MENU-->' + rendu(m) + '<!--/MENU-->');
-          if (!/^\s*<!doctype html>/i.test(html)) html = '<!doctype html>\n' + html;
-          return art.publish(html);
-        }).then(function () {
-          status.textContent = 'Menu publié. La page se recharge.';
-        }).catch(function (err) {
-          save.disabled = false;
-          var code = err && err.code;
-          if (code === 'not_writer' || code === 'not_granted' || code === 'not_declared') {
-            try { localStorage.setItem('breizhou-menu-ro', '1'); } catch (e2) {}
-            status.textContent = 'Cette vue est en lecture seule.'; link.hidden = true;
-          } else if (code === 'conflict') {
-            status.textContent = 'Une version plus récente vient d\'être publiée, la page se recharge.';
-          } else if (code === 'rate_limited') {
-            status.textContent = 'Trop de publications d\'affilée. Réessayez dans une minute.';
-          } else {
-            status.textContent = 'La publication a échoué. Réessayez, ou écrivez-nous.';
-          }
-        });
-      });
-    });
+    var sem = JSON.parse(document.getElementById('menu-data').textContent);
+    var d = new Date().getDay();             /* 0 dim … 6 sam */
+    var i = (d >= 1 && d <= 5) ? d - 1 : 4;  /* le week-end : vendredi */
+    var j = sem.jours[i];
+    var veg = j.veggie ? ' <span class="veggie">Veggie</span>' : '';
+    var rows = sem.textures.map(function (t) {
+      return '<div><dt>' + esc(t[1]) + '<small>' + esc(t[2]) + '</small></dt><dd>' + j[t[0]].map(esc).join('<br>') + '</dd></div>';
+    }).join('');
+    document.getElementById('jour').innerHTML =
+      '<div class="jour-date"><p class="jd">' + esc(j.date) + veg + '</p><p class="jt"><b>Cuisiné à Bréteil</b><br>' + esc(sem.titre) + '</p></div>' +
+      '<dl class="jour-list">' + rows + '</dl>';
+    document.querySelectorAll('table.menu tbody tr').forEach(function (tr) { var td = tr.children[i + 1]; if (td) td.classList.add('today'); });
   })();
 </script>
