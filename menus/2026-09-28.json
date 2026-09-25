@@ -1,0 +1,234 @@
+{
+ "titre": "Semaine du 28 septembre au 2 octobre 2026",
+ "debut": "2026-09-28",
+ "fin": "2026-10-02",
+ "note": "Le menu peut varier selon les disponibilités des matières. Origine des viandes : France.",
+ "source": "Publication Facebook de Breizhou (image « 1 de 3 »), transmise par Gaëtan le 25/09/2026 à 22 h 45 ; transcrite à la main par le chef de projet. Mercredi grand et géant : « laitage inclus dans le plat ».",
+ "textures": [
+  [
+   "intro",
+   "Intro",
+   "premières purées"
+  ],
+  [
+   "petit",
+   "Petit",
+   "dès 6 mois"
+  ],
+  [
+   "moyen",
+   "Moyen",
+   "dès 9 mois"
+  ],
+  [
+   "grand",
+   "Grand",
+   "dès 12 mois, début des morceaux"
+  ],
+  [
+   "geant",
+   "Géant",
+   "dès 18 mois, à l'aise avec les morceaux"
+  ],
+  [
+   "gouter",
+   "Goûter",
+   "1, 2 ou 3 au choix"
+  ]
+ ],
+ "jours": [
+  {
+   "nom": "Lundi",
+   "date": "Lundi 28 septembre 2026",
+   "veggie": true,
+   "intro": [
+    "Mixé de potimarrons",
+    "Mixé de bananes"
+   ],
+   "petit": [
+    "Purée fine de potimarrons",
+    "Crème de lentilles corail",
+    "Purée pom'bananes"
+   ],
+   "moyen": [
+    "Purée fine de potimarrons",
+    "Crème de lentilles corail",
+    "Purée pom'bananes"
+   ],
+   "grand": [
+    "Dhal de lentilles corail aux petits légumes",
+    "Blé tendre",
+    "Fromage blanc",
+    "Purée pom'bananes"
+   ],
+   "geant": [
+    "Chou rouge aux pommes",
+    "Dhal de lentilles corail aux petits légumes",
+    "Blé tendre",
+    "Fromage blanc",
+    "Purée pom'bananes"
+   ],
+   "gouter": [
+    "Purée de fruit",
+    "Pain de mie",
+    "Kiri"
+   ]
+  },
+  {
+   "nom": "Mardi",
+   "date": "Mardi 29 septembre 2026",
+   "veggie": false,
+   "intro": [
+    "Mixé de haricots verts",
+    "Mixé de pommes"
+   ],
+   "petit": [
+    "Purée fine de haricots verts",
+    "Mixé de bœuf",
+    "Purée pom'agrumes"
+   ],
+   "moyen": [
+    "Purée fine de haricots verts",
+    "Mouliné de bœuf",
+    "Purée pom'agrumes"
+   ],
+   "grand": [
+    "Coleslaw",
+    "Bolognaise au bœuf et petits légumes",
+    "Coquillettes",
+    "Comté",
+    "Fruits de saison"
+   ],
+   "geant": [
+    "Coleslaw",
+    "Bolognaise au bœuf et petits légumes",
+    "Coquillettes",
+    "Comté",
+    "Fruits de saison"
+   ],
+   "gouter": [
+    "Fruit de saison ou purée de fruit",
+    "Gâteau maison",
+    "Lait entier"
+   ]
+  },
+  {
+   "nom": "Mercredi",
+   "date": "Mercredi 30 septembre 2026",
+   "veggie": false,
+   "intro": [
+    "Mixé de carottes",
+    "Mixé de poires"
+   ],
+   "petit": [
+    "Purée fine de carottes",
+    "Mixé d'œufs durs",
+    "Purée pom'poires"
+   ],
+   "moyen": [
+    "Purée fine de carottes",
+    "Mouliné d'œufs durs",
+    "Purée pom'poires"
+   ],
+   "grand": [
+    "Carottes fondantes",
+    "Œufs brouillés au chèvre",
+    "Boulgour à la tomate",
+    "Purée pommes-poires"
+   ],
+   "geant": [
+    "Pomelos à croquer",
+    "Carottes fondantes",
+    "Œufs brouillés au chèvre",
+    "Boulgour à la tomate",
+    "Purée pommes-poires"
+   ],
+   "gouter": [
+    "Fruit de saison ou purée de fruit",
+    "Pain et confiture",
+    "Petits-suisses"
+   ],
+   "mentions": {
+    "grand": "Laitage inclus dans le plat",
+    "geant": "Laitage inclus dans le plat"
+   }
+  },
+  {
+   "nom": "Jeudi",
+   "date": "Jeudi 1er octobre 2026",
+   "veggie": false,
+   "intro": [
+    "Mixé de brocolis",
+    "Mixé de coings"
+   ],
+   "petit": [
+    "Purée fine de brocolis",
+    "Mixé de poissons",
+    "Purée pom'coings"
+   ],
+   "moyen": [
+    "Purée fine de brocolis",
+    "Mouliné de poisson",
+    "Purée pom'coings"
+   ],
+   "grand": [
+    "Brandade de poisson et pommes de terre",
+    "Brocolis aux amandes",
+    "Camembert",
+    "Fruits de saison"
+   ],
+   "geant": [
+    "Radis noirs à croquer",
+    "Brandade de poisson et pommes de terre",
+    "Brocolis aux amandes",
+    "Camembert",
+    "Fruits de saison"
+   ],
+   "gouter": [
+    "Fruit de saison ou purée de fruit",
+    "Gâteau maison",
+    "Lait entier"
+   ]
+  },
+  {
+   "nom": "Vendredi",
+   "date": "Vendredi 2 octobre 2026",
+   "veggie": false,
+   "intro": [
+    "Mixé de navets",
+    "Mixé de pommes"
+   ],
+   "petit": [
+    "Purée fine de navets",
+    "Mixé de porc",
+    "Purée pom'cannelle"
+   ],
+   "moyen": [
+    "Purée fine de navets",
+    "Mouliné de porc",
+    "Purée pom'cannelle"
+   ],
+   "grand": [
+    "Carottes à l'orientale",
+    "Navets rôtis aux herbes",
+    "Sauté de porc sauce barbecue",
+    "Trio de céréales",
+    "Yaourt",
+    "Fruits de saison"
+   ],
+   "geant": [
+    "Carottes à l'orientale",
+    "Navets rôtis aux herbes",
+    "Sauté de porc sauce barbecue",
+    "Trio de céréales",
+    "Yaourt",
+    "Fruits de saison"
+   ],
+   "gouter": [
+    "Fruit de saison ou purée de fruit",
+    "Pain complet",
+    "Vache qui rit"
+   ]
+  }
+ ]
+}
