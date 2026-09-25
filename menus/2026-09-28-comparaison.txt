@@ -1,0 +1,16 @@
+Comparaison site ↔ agent étiquettes — Semaine du 28 septembre au 2 octobre 2026
+Site : site-breizhou/menus/2026-09-28.json · Étiquettes : Etiquettes Breizhou/comparaisons/<date>/menu-<jour>.txt
+
+Lundi 28/09 : comparé avec Etiquettes Breizhou/comparaisons/2026-09-28/menu-lundi.txt
+  INTRO   ✓ identique (2 plats)
+  PETIT   ✓ identique (3 plats)
+  MOYEN   ✓ identique (3 plats)
+  GRAND   ✓ identique (4 plats)
+  GEANT   ✓ identique (5 plats)
+  GOUTER  ✓ identique (3 plats)
+
+Mardi 29/09 : pas de menu étiquettes (Etiquettes Breizhou/comparaisons/2026-09-29/menu-mardi.txt absent)
+Mercredi 30/09 : pas de menu étiquettes (Etiquettes Breizhou/comparaisons/2026-09-30/menu-mercredi.txt absent)
+Jeudi 01/10 : pas de menu étiquettes (Etiquettes Breizhou/comparaisons/2026-10-01/menu-jeudi.txt absent)
+Vendredi 02/10 : pas de menu étiquettes (Etiquettes Breizhou/comparaisons/2026-10-02/menu-vendredi.txt absent)
+Bilan : 1 jour(s) comparé(s), 0 écart(s) à relire par un humain.
