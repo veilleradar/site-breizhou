@@ -1,5 +1,5 @@
-/* breizhou.fr — script commun : bouton « Menu » sur téléphone, anciens liens, encart du
-   menu sur l'accueil. Le site reste lisible sans script. */
+/* breizhou.fr — script commun : onglets sur téléphone, anciens liens, encart du menu sur
+   l'accueil. Aucun lien ne fait défiler la page. Le site reste lisible sans script. */
 (function () {
   /* Anciens liens de la page unique (breizhou.fr/#menus, #contact…) : on renvoie vers la
      page qui a pris la place de la section. */
@@ -11,16 +11,19 @@
     return;
   }
 
-  /* Bouton « Menu » */
-  var btn = document.querySelector('.menu-btn'), nav = document.getElementById('menu');
-  if (btn && nav) {
-    var fermer = function () { nav.classList.remove('ouvert'); btn.setAttribute('aria-expanded', 'false'); };
-    btn.addEventListener('click', function () {
-      var ouvert = nav.classList.toggle('ouvert');
-      btn.setAttribute('aria-expanded', ouvert ? 'true' : 'false');
-    });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') fermer(); });
-    window.matchMedia('(min-width: 1061px)').addEventListener('change', fermer);
+  /* Onglets sur téléphone : l'onglet de la page courante est ramené dans la rangée visible.
+     On ne fait défiler que la rangée d'onglets, jamais la page. */
+  var ul = document.querySelector('.menu-nav ul'), actif = document.querySelector('.menu-nav a[aria-current="page"]');
+  if (ul && actif && ul.scrollWidth > ul.clientWidth) {
+    var li = actif.parentNode;
+    ul.scrollLeft = Math.max(0, li.offsetLeft - (ul.clientWidth - li.offsetWidth) / 2);
+  }
+
+  /* Lien d'évitement (clavier, lecteur d'écran) : il place le curseur sur le contenu sans
+     faire défiler la page ni ajouter de # à l'adresse. */
+  var evite = document.querySelector('.lien-evitement'), contenu = document.getElementById('contenu');
+  if (evite && contenu) {
+    evite.addEventListener('click', function (e) { e.preventDefault(); contenu.focus({ preventScroll: true }); });
   }
 
   /* Encart « menu du jour » de l'accueil : lit menus/semaine.json, écrit par l'outil

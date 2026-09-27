@@ -97,32 +97,34 @@ p{margin:0}
 .marque{display:flex;align-items:center;gap:.7rem;text-decoration:none;color:var(--encre);flex-shrink:0}
 .marque img{width:52px;height:52px;border-radius:10px;background:#fff;border:1px solid var(--trait)}
 .marque span{font-family:var(--titre);font-weight:800;font-size:1.75rem;letter-spacing:.04em;text-transform:uppercase}
-.menu-nav{margin-left:auto}
+.menu-nav{margin-left:auto;min-width:0}
 .menu-nav ul{list-style:none;margin:0;padding:0;display:flex;align-items:center;gap:.2rem}
-.menu-nav a{display:block;padding:.55rem .7rem;text-decoration:none;color:var(--encre);font-weight:700;font-size:1rem;border-bottom:3px solid transparent}
+.menu-nav a{display:block;padding:.55rem .6rem;text-decoration:none;color:var(--encre);font-weight:700;font-size:1rem;border-bottom:3px solid transparent;white-space:nowrap}
 .menu-nav a:hover{color:var(--menthe-fonce)}
 .menu-nav a[aria-current="page"]{color:var(--menthe-fonce);border-bottom-color:var(--menthe)}
-.menu-nav .nav-devis{margin-left:.6rem}
-.menu-nav .nav-devis a{border:0;background:var(--bouton-fond);color:var(--bouton-texte);border-radius:var(--r);padding:.6rem 1rem}
-.menu-nav .nav-devis a:hover{background:var(--bouton-survol);color:var(--bouton-texte)}
-.menu-btn{display:none}
-@media (max-width:1060px){
-  .nav{min-height:68px}
-  .marque img{width:44px;height:44px}
-  .marque span{font-size:1.45rem}
-  .menu-btn{display:inline-flex;align-items:center;gap:.45rem;margin-left:auto;min-height:44px;padding:.5rem .8rem;border:2px solid var(--trait);border-radius:var(--r);background:var(--fond);color:var(--encre);font:700 1rem var(--texte);cursor:pointer}
-  .menu-btn svg{width:20px;height:20px}
-  .menu-btn .i-fermer{display:none}
-  .menu-btn[aria-expanded="true"] .i-ouvrir{display:none}
-  .menu-btn[aria-expanded="true"] .i-fermer{display:block}
-  .js .menu-nav{display:none}
-  .menu-nav{position:absolute;left:0;right:0;top:100%;background:var(--fond);border-bottom:1px solid var(--trait);box-shadow:var(--ombre);margin:0}
-  .menu-nav.ouvert{display:block}
-  .menu-nav ul{flex-direction:column;align-items:stretch;gap:0;padding:.4rem 1.25rem 1.2rem}
-  .menu-nav a{padding:.85rem .2rem;font-size:1.1rem;border-bottom:1px solid var(--trait)}
-  .menu-nav a[aria-current="page"]{border-bottom-color:var(--trait);box-shadow:inset 4px 0 0 var(--menthe);padding-left:.9rem}
-  .menu-nav .nav-devis{margin:1rem 0 0}
-  .menu-nav .nav-devis a{text-align:center;padding:.9rem 1rem}
+.menu-nav .nav-accueil{display:none}
+.btn-devis{flex-shrink:0;display:inline-flex;align-items:center;min-height:44px;padding:.55rem 1rem;border-radius:var(--r);background:var(--bouton-fond);color:var(--bouton-texte);font-weight:700;text-decoration:none;white-space:nowrap}
+.btn-devis:hover{background:var(--bouton-survol)}
+
+/* Téléphone et tablette : onglets toujours visibles sous l'en-tête, qu'on fait glisser du doigt
+   (consigne de Gaëtan, 27/09). Pas de bouton « Menu », pas de panneau qui s'ouvre. */
+@media (max-width:1180px){
+  .nav{display:grid;grid-template-columns:minmax(0,1fr) auto;justify-content:space-between;align-items:center;gap:0 .8rem;min-height:0;padding-top:.6rem}
+  .marque{gap:.5rem;min-width:0}
+  .marque img{width:40px;height:40px}
+  .marque span{font-size:clamp(1.1rem,5.2vw,1.45rem)}
+  .btn-devis{justify-self:end;min-height:40px;padding:.4rem .7rem;font-size:clamp(.85rem,3.9vw,.95rem)}
+  .menu-nav{grid-column:1/-1;grid-row:2;margin:.5rem 0 0;position:relative;contain:inline-size}
+  .menu-nav ul{gap:0;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x proximity;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -1.25rem;padding:0 1.25rem;
+    -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 1.25rem,#000 calc(100% - 2.5rem),transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 1.25rem,#000 calc(100% - 2.5rem),transparent 100%)}
+  .menu-nav ul::-webkit-scrollbar{display:none}
+  .menu-nav li{scroll-snap-align:start;flex-shrink:0}
+  .menu-nav .nav-accueil{display:block}
+  .menu-nav a{padding:.7rem .85rem .6rem;font-size:1rem}
+  .menu-nav a[aria-current="page"]{background:var(--surface-2);border-radius:var(--r) var(--r) 0 0}
+}
+@media (max-width:340px){
+  .marque span{display:none}
 }
 
 /* ---------- sections ---------- */
