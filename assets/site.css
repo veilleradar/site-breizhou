@@ -18,6 +18,8 @@
   --bouton-texte:#FFFFFF;
   --bouton-survol:#155C4B;
   --etiquette:#FFFFFF;
+  --pastille-fond:#B5401F;
+  --pastille-texte:#FFFFFF;
   --ombre:0 14px 32px -20px rgba(20,45,38,.45);
   --titre:"Nunito","Trebuchet MS","Segoe UI",sans-serif;
   --texte:"Source Sans 3","Source Sans Pro",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
@@ -40,6 +42,8 @@
     --bouton-texte:#0C1915;
     --bouton-survol:#6CC9AB;
     --etiquette:#FBFBF8;
+    --pastille-fond:#F49A80;
+    --pastille-texte:#1B1210;
     --ombre:0 14px 32px -20px rgba(0,0,0,.8);
   }
 }
@@ -58,6 +62,8 @@
   --bouton-texte:#0C1915;
   --bouton-survol:#6CC9AB;
   --etiquette:#FBFBF8;
+  --pastille-fond:#F49A80;
+  --pastille-texte:#1B1210;
   --ombre:0 14px 32px -20px rgba(0,0,0,.8);
 }
 
@@ -167,7 +173,7 @@ main{display:block}
 @media (max-width:980px){.etapes{grid-template-columns:repeat(2,1fr)}}
 @media (max-width:560px){.etapes{grid-template-columns:1fr}}
 .etapes li{counter-increment:etape;display:grid;gap:.5rem;align-content:start;padding-top:1.1rem;border-top:3px solid var(--menthe)}
-.etapes li::before{content:counter(etape);font-family:var(--titre);font-weight:800;font-size:1rem;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%;background:var(--orange);color:#fff}
+.etapes li::before{content:counter(etape);font-family:var(--titre);font-weight:800;font-size:1rem;width:2rem;height:2rem;display:grid;place-items:center;border-radius:50%;background:var(--pastille-fond);color:var(--pastille-texte)}
 .etapes h3{font-size:1.15rem}
 .etapes p{color:var(--doux);font-size:.98rem}
 .apres-etapes{margin-top:2rem}
@@ -344,3 +350,6 @@ form.devis{display:grid;gap:1rem}
 /* légende des photos d'illustration */
 .photo{position:relative}
 .photo figcaption{position:absolute;right:.6rem;top:.6rem;font-size:.8rem;color:#fff;background:rgba(0,0,0,.55);border-radius:3px;padding:.15rem .45rem}
+
+/* le contenu reçoit le focus du lien d'évitement : pas de cadre autour de toute la page */
+main:focus{outline:none}
