@@ -38,6 +38,7 @@
     var now = new Date();
     var iso = now.getFullYear() + '-' + String(now.getMonth() + 1).padStart(2, '0') + '-' + String(now.getDate()).padStart(2, '0');
     var jour = encart.querySelector('.em-jour'), sous = encart.querySelector('.em-sous'), plats = encart.querySelector('.em-plats ul'), titre = encart.querySelector('.em-plats h3');
+    var titreSection = document.getElementById('t-menu');
     if (iso > sem.fin) {
       jour.textContent = 'Le menu de la semaine arrive bientôt.';
       sous.textContent = 'Il est affiché dès sa publication par la cuisine.';
@@ -46,6 +47,11 @@
     var avenir = iso < sem.debut, d = now.getDay();
     var i = avenir ? 0 : ((d >= 1 && d <= 5) ? d - 1 : 4);
     var j = sem.jours[i];
+    /* « aujourd'hui » seulement si c'est vrai : un jour de semaine, dans la semaine en cours */
+    if (titreSection) {
+      var court = String(j.date || '').replace(/\s+\d{4}$/, '');
+      titreSection.textContent = (!avenir && d >= 1 && d <= 5) ? 'Au menu aujourd\u2019hui' : 'Au menu ' + court.charAt(0).toLowerCase() + court.slice(1);
+    }
     jour.innerHTML = esc(j.date) + (j.veggie ? ' <span class="veggie">Veggie</span>' : '');
     sous.textContent = (avenir ? 'Semaine prochaine · ' : '') + sem.titre;
     titre.textContent = 'Au menu, en texture grand (dès 12 mois)';

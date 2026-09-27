@@ -65,7 +65,15 @@
       <div>
         <h2>Demander un devis</h2>
         <p class="doux" style="margin:.5rem 0 1.4rem">Pour établir une offre adaptée et le trajet de livraison, nous avons besoin de l'adresse de la structure et du nombre de repas par tranche d'âge. Une estimation suffit.</p>
-        <form class="devis" id="form-devis">
+        <form class="devis" id="form-devis" action="mailto:info.breizhou@gmail.com" method="post" enctype="text/plain">
+          <fieldset class="publics">
+            <legend>Pour quelle structure ?</legend>
+            <div class="choix-public">
+              <label class="radio"><input type="radio" name="public" value="Crèche ou micro-crèche" checked> Crèche ou micro-crèche</label>
+              <label class="radio"><input type="radio" name="public" value="École ou accueil de loisirs"> École ou accueil de loisirs</label>
+              <label class="radio"><input type="radio" name="public" value="Résidence seniors"> Résidence seniors</label>
+            </div>
+          </fieldset>
           <div class="champs-form">
             <label>Structure <small>(obligatoire)</small><input name="structure" autocomplete="organization" required></label>
             <label>Votre nom <small>(obligatoire)</small><input name="nom" autocomplete="name" required></label>
@@ -73,20 +81,40 @@
             <label>Téléphone<input name="tel" type="tel" autocomplete="tel"></label>
           </div>
           <label>Adresse de la structure<input name="adresse" autocomplete="street-address"></label>
-          <fieldset>
+          <fieldset data-public="Crèche ou micro-crèche">
             <legend>Repas par jour, par tranche d'âge</legend>
             <div class="ages">
-              <label>Intro<input name="intro" inputmode="numeric"></label>
+              <label>Intro<small>premières purées</small><input name="intro" inputmode="numeric"></label>
               <label>Petit<small>dès 6 mois</small><input name="petit" inputmode="numeric"></label>
               <label>Moyen<small>dès 9 mois</small><input name="moyen" inputmode="numeric"></label>
               <label>Grand<small>dès 12 mois</small><input name="grand" inputmode="numeric"></label>
               <label>Géant<small>dès 18 mois</small><input name="geant" inputmode="numeric"></label>
             </div>
+            <label class="case"><input type="checkbox" name="gouters" value="oui"> Nous souhaitons aussi les goûters</label>
           </fieldset>
-          <label>Votre demande<small>Goûters, date de démarrage souhaitée, régimes particuliers…</small><textarea name="message"></textarea></label>
+          <fieldset data-public="École ou accueil de loisirs">
+            <legend>Repas par jour</legend>
+            <div class="ages trois">
+              <label>Maternelle<input name="maternelle" inputmode="numeric"></label>
+              <label>Élémentaire<input name="elementaire" inputmode="numeric"></label>
+              <label>Adultes<input name="adultes" inputmode="numeric"></label>
+            </div>
+          </fieldset>
+          <fieldset data-public="Résidence seniors">
+            <legend>Repas par jour</legend>
+            <div class="ages trois">
+              <label>Nombre de repas<input name="repas_seniors" inputmode="numeric"></label>
+            </div>
+          </fieldset>
+          <label>Votre demande<small>Date de démarrage souhaitée, régimes particuliers, questions…</small><textarea name="message"></textarea></label>
           <div>
             <button class="btn btn-plein" type="submit">Préparer l'e-mail de demande</button>
-            <p class="note" id="note-devis" style="margin-top:.7rem">Le bouton ouvre votre messagerie avec la demande déjà rédigée. Rien n'est enregistré par le site.</p>
+            <p class="note" style="margin-top:.7rem">Le bouton ouvre votre messagerie avec la demande déjà rédigée. Rien n'est enregistré par le site. Vous pouvez aussi écrire directement à <a href="mailto:info.breizhou@gmail.com">info.breizhou@gmail.com</a>.</p>
+          </div>
+          <div class="repli" id="repli" hidden>
+            <p><b>Votre messagerie ne s'est pas ouverte ?</b> Copiez votre demande et envoyez-la à <a href="mailto:info.breizhou@gmail.com">info.breizhou@gmail.com</a>, ou appelez le <a href="tel:+33631331155">06 31 33 11 55</a>.</p>
+            <label>Votre demande, prête à copier<textarea id="demande-texte" readonly></textarea></label>
+            <div class="actions"><button class="btn btn-trait" type="button" id="copier">Copier ma demande</button><span class="note" id="copie-etat" role="status"></span></div>
           </div>
         </form>
       </div>
@@ -94,6 +122,7 @@
         <div><b>Téléphone</b><a href="tel:+33631331155">06 31 33 11 55</a></div>
         <div><b>E-mail</b><a href="mailto:info.breizhou@gmail.com">info.breizhou@gmail.com</a></div>
         <div><b>Cuisine</b><span>3 rue de Montfort, 35160 Bréteil</span></div>
+        <div><b>Zones livrées</b><span>Nous livrons aujourd'hui en Ille-et-Vilaine, en Loire-Atlantique et dans le Finistère. Pour une nouvelle adresse, nous étudions la tournée.</span></div>
         <div class="encadre">
           <h2 style="font-size:1.2rem">Déjà client ?</h2>
           <p>Vos commandes se passent sur Panier Local : ajouts et modifications jusqu'à 48 h avant la livraison.</p>
@@ -119,19 +148,43 @@
 </section>
 
 <script>
-  document.getElementById('form-devis').addEventListener('submit', function (e) {
-    e.preventDefault();
-    var f = new FormData(this), l = [];
-    var champs = [['structure', 'Structure'], ['nom', 'Nom'], ['email', 'E-mail'], ['tel', 'Téléphone'], ['adresse', 'Adresse']];
-    champs.forEach(function (c) { if (f.get(c[0])) l.push(c[1] + ' : ' + f.get(c[0])); });
-    var ages = [['intro', 'Intro'], ['petit', 'Petit'], ['moyen', 'Moyen'], ['grand', 'Grand'], ['geant', 'Géant']]
-      .filter(function (a) { return f.get(a[0]); }).map(function (a) { return a[1] + ' ' + f.get(a[0]); });
-    if (ages.length) l.push('Repas par jour : ' + ages.join(', '));
-    if (f.get('message')) l.push('', f.get('message'));
-    var sujet = 'Demande de devis' + (f.get('structure') ? ' : ' + f.get('structure') : '');
-    location.href = 'mailto:info.breizhou@gmail.com?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(l.join('\n'));
-    document.getElementById('note-devis').textContent = 'Votre messagerie s’ouvre. Si rien ne se passe, écrivez à info.breizhou@gmail.com.';
-  });
+  (function () {
+    var f = document.getElementById('form-devis');
+    var blocs = f.querySelectorAll('fieldset[data-public]');
+    var montrer = function () {
+      var choix = (f.querySelector('input[name=public]:checked') || {}).value;
+      blocs.forEach(function (b) { var ok = b.getAttribute('data-public') === choix; b.hidden = !ok; b.disabled = !ok; });
+    };
+    f.querySelectorAll('input[name=public]').forEach(function (r) { r.addEventListener('change', montrer); });
+    montrer();
+
+    f.addEventListener('submit', function (e) {
+      e.preventDefault();
+      if (!f.reportValidity()) return;
+      var d = new FormData(f), l = [];
+      l.push('Structure : ' + d.get('public') + (d.get('structure') ? ', ' + d.get('structure') : ''));
+      [['nom', 'Nom'], ['email', 'E-mail'], ['tel', 'Téléphone'], ['adresse', 'Adresse']].forEach(function (c) { if (d.get(c[0])) l.push(c[1] + ' : ' + d.get(c[0])); });
+      var nombres = [['intro', 'Intro'], ['petit', 'Petit'], ['moyen', 'Moyen'], ['grand', 'Grand'], ['geant', 'Géant'],
+        ['maternelle', 'Maternelle'], ['elementaire', 'Élémentaire'], ['adultes', 'Adultes'], ['repas_seniors', 'Repas']]
+        .filter(function (a) { return d.get(a[0]); }).map(function (a) { return a[1] + ' ' + d.get(a[0]); });
+      if (nombres.length) l.push('Repas par jour : ' + nombres.join(', '));
+      if (d.get('gouters')) l.push('Goûters : oui');
+      if (d.get('message')) l.push('', d.get('message'));
+      var sujet = 'Demande de devis : ' + (d.get('structure') || d.get('public'));
+      var texte = l.join('\n');
+      document.getElementById('demande-texte').value = 'Objet : ' + sujet + '\n\n' + texte;
+      document.getElementById('repli').hidden = false;
+      location.href = 'mailto:info.breizhou@gmail.com?subject=' + encodeURIComponent(sujet) + '&body=' + encodeURIComponent(texte);
+    });
+
+    document.getElementById('copier').addEventListener('click', function () {
+      var t = document.getElementById('demande-texte'), etat = document.getElementById('copie-etat');
+      var fini = function () { etat.textContent = 'Demande copiée. Collez-la dans un e-mail à info.breizhou@gmail.com.'; };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(t.value).then(fini, function () { t.select(); etat.textContent = 'Texte sélectionné : faites Copier.'; });
+      } else { t.select(); etat.textContent = 'Texte sélectionné : faites Copier.'; }
+    });
+  })();
 </script>
 </main>
 

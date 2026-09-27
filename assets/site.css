@@ -184,12 +184,12 @@ main{display:block}
 .etiquette-scene{display:grid;justify-items:center;gap:.9rem;margin:0;min-width:0}
 .etiquette-scene figcaption{font-size:.95rem;color:var(--doux);text-align:center;max-width:40ch}
 .etiquette{container-type:inline-size;width:100%;max-width:560px;aspect-ratio:66.05/36;background:var(--etiquette);color:#161616;border:1px solid #cfc9bd;border-radius:3px;box-shadow:var(--ombre);padding:3.2% 3.8%;display:grid;grid-template-rows:auto 1fr auto;font-family:var(--texte);font-variant-numeric:tabular-nums;line-height:1.28}
-.etiquette .e-client{font-weight:700;font-size:3.3cqi;color:#1D4ED8}
-.etiquette .e-plat{font-weight:700;font-size:4.9cqi;line-height:1.15;margin-top:.6cqi}
-.etiquette .e-ligne{font-size:3.3cqi;margin-top:1cqi}
+.etiquette .e-client{font-weight:700;font-size:3.9cqi;color:#1D4ED8}
+.etiquette .e-plat{font-weight:700;font-size:6.2cqi;line-height:1.15;margin-top:.6cqi}
+.etiquette .e-ligne{font-size:3.9cqi;margin-top:1cqi}
 .etiquette .e-ligne b{color:#B91C1C}
-.etiquette .e-pied{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2.5cqi;font-size:3.1cqi}
-.etiquette .e-estampille{border:.45cqi solid #161616;border-radius:50%;padding:1cqi 2.8cqi;font-size:2.7cqi;font-weight:700;text-align:center;line-height:1.1;white-space:nowrap}
+.etiquette .e-pied{display:grid;grid-template-columns:1fr auto;align-items:end;gap:2.5cqi;font-size:3.7cqi}
+.etiquette .e-estampille{border:.45cqi solid #161616;border-radius:50%;padding:1cqi 2.8cqi;font-size:3.1cqi;font-weight:700;text-align:center;line-height:1.1;white-space:nowrap}
 
 /* ---------- photos : emplacement neutre tant que la vraie photo n'est pas déposée ---------- */
 .photo{margin:0;border-radius:10px;overflow:hidden;background:var(--surface-2);aspect-ratio:4/3}
@@ -208,6 +208,14 @@ main{display:block}
 @media (max-width:900px){
   .visuel{padding-bottom:0}
   .visuel .etiquette-scene{position:relative;left:auto;right:auto;margin:-18% 4% 0}
+  /* sans vraie photo, pas de grand bloc vide sur téléphone : l'étiquette seule */
+  .photo-attente{display:none}
+  .visuel .photo-attente + .etiquette-scene{margin:0}
+}
+@media (max-width:560px){
+  /* sur petit écran, l'étiquette garde ses informations mais plus son vide central */
+  .etiquette{aspect-ratio:auto;grid-template-rows:auto;gap:3cqi;padding:4% 4.5%}
+  .etiquette > div:nth-child(2){display:none}
 }
 
 /* ---------- encart menu (accueil) ---------- */
@@ -331,7 +339,7 @@ form.devis{display:grid;gap:1rem}
 @media (max-width:620px){.champs-form{grid-template-columns:minmax(0,1fr)}}
 .devis label{display:grid;gap:.35rem;font-weight:700;font-size:.97rem}
 .devis label small{font-weight:400;color:var(--doux)}
-.devis input,.devis textarea{font:inherit;font-size:1rem;padding:.7rem .85rem;border:1.5px solid var(--trait);border-radius:var(--r);background:var(--fond);color:var(--encre);width:100%}
+.devis input,.devis textarea{font:inherit;font-weight:400;font-size:1rem;padding:.7rem .85rem;border:1.5px solid var(--trait);border-radius:var(--r);background:var(--fond);color:var(--encre);width:100%}
 .devis input:hover,.devis textarea:hover{border-color:var(--doux)}
 .devis textarea{min-height:8rem;resize:vertical}
 .devis fieldset{border:1px solid var(--trait);border-radius:var(--r);padding:1rem 1.1rem 1.2rem;margin:0}
@@ -353,3 +361,13 @@ form.devis{display:grid;gap:1rem}
 
 /* le contenu reçoit le focus du lien d'évitement : pas de cadre autour de toute la page */
 main:focus{outline:none}
+
+/* formulaire de devis : choix du public, cases à cocher, repli si la messagerie ne s'ouvre pas */
+.choix-public{display:flex;flex-wrap:wrap;gap:.6rem 1.2rem}
+.devis label.radio,.devis label.case{display:flex;align-items:center;gap:.55rem;font-weight:600;min-height:44px}
+.devis label.radio input,.devis label.case input{width:1.2rem;height:1.2rem;margin:0;accent-color:var(--menthe-fonce)}
+.devis .ages.trois{grid-template-columns:repeat(3,minmax(0,1fr))}
+@media (max-width:620px){.devis .ages.trois{grid-template-columns:minmax(0,1fr)}}
+.devis fieldset[hidden]{display:none}
+.repli{display:grid;gap:.8rem;padding:1.1rem 1.2rem;border:2px solid var(--menthe);border-radius:var(--r);background:var(--surface)}
+.repli textarea{min-height:10rem;font-size:.95rem}
