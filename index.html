@@ -14,9 +14,9 @@
 <meta property="og:locale" content="fr_FR">
 <meta name="theme-color" content="#1C7560">
 <link rel="icon" href="/assets/logo-breizhou.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&family=Nunito:wght@700;800&display=swap">
+<link rel="preload" href="/assets/polices/sourcesans3.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/assets/polices/nunito.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/assets/polices/polices.css">
 <link rel="stylesheet" href="/assets/site.css">
 <script>document.documentElement.classList.add('js')</script>
 <script src="/assets/site.js" defer></script>
@@ -50,9 +50,6 @@
 </header>
 
 <main id="contenu">
-<!-- Accueil. Sources des faits : site validé par Gaëtan (09/09), réponses de Breizhou aux
-     crèches du 09/09 et du 16/09 (boîte info.breizhou), règles du logiciel d'étiquettes. -->
-
 <section class="ouverture">
   <div class="wrap ouverture-grille">
     <div>
@@ -65,21 +62,27 @@
       </div>
     </div>
 
-    <figure class="etiquette-scene">
-      <div class="etiquette" role="img" aria-label="Exemple d'étiquette de traçabilité : client, plat, allergènes, poids, date de fabrication, DLC, température de stockage et estampille sanitaire">
-        <div>
-          <div class="e-client">CRÈCHE BREIZHOU · MENU GRAND</div>
-          <div class="e-plat">Purée de carottes &amp; émincé de poulet fermier</div>
-          <div class="e-ligne">Allergènes : <b>AUCUN</b> · Poids : 115 g · Total : 12 × 115 g</div>
-        </div>
-        <div></div>
-        <div class="e-pied">
-          <div>Fabriqué le : 29/09/2026 · DLC : 02/10/2026<br>Stockage entre 0 °C et +3 °C</div>
-          <div class="e-estampille">FR<br>35.040.001<br>CE</div>
-        </div>
+    <div>
+      <div class="visuel">
+        <figure class="photo photo-attente" data-photo="images/cuisine.jpg" role="img" aria-label="La cuisine de Breizhou à Bréteil"><span>La cuisine de Breizhou à Bréteil</span></figure>
+        <figure class="etiquette-scene">
+          <div class="etiquette" role="img" aria-label="Exemple d'étiquette de traçabilité : client, plat, allergènes, poids, date de fabrication, DLC, température de stockage et estampille sanitaire">
+            <div>
+              <div class="e-client">CRÈCHE BREIZHOU · MENU GRAND</div>
+              <div class="e-plat">Purée de carottes &amp; émincé de poulet fermier</div>
+              <div class="e-ligne">Allergènes : <b>AUCUN</b> · Poids : 115 g · Total : 12 × 115 g</div>
+            </div>
+            <div></div>
+            <div class="e-pied">
+              <div>Fabriqué le : 29/09/2026 · DLC : 02/10/2026<br>Stockage entre 0 °C et +3 °C</div>
+              <div class="e-estampille">FR<br>35.040.001<br>CE</div>
+            </div>
+          </div>
+          <figcaption>Exemple d'étiquette. Chaque barquette porte la sienne, au format 66 × 36 mm.</figcaption>
+        </figure>
       </div>
-      <figcaption>Exemple d'étiquette. Chaque barquette porte la sienne, au format 66 × 36 mm.</figcaption>
-    </figure>
+      <p class="visuel-legende">Exemple d'étiquette. Chaque barquette porte la sienne, au format 66 × 36 mm.</p>
+    </div>
   </div>
 </section>
 
