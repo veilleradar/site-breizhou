@@ -338,3 +338,7 @@ form.devis{display:grid;gap:1rem}
 .legal dt{font-weight:700}
 .legal dd{margin:0}
 .a-completer{background:#FFF1C2;color:#5A4300;border-radius:3px;padding:0 .3rem}
+
+/* légende des photos d'illustration */
+.photo{position:relative}
+.photo figcaption{position:absolute;right:.6rem;top:.6rem;font-size:.8rem;color:#fff;background:rgba(0,0,0,.55);border-radius:3px;padding:.15rem .45rem}
