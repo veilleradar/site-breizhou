@@ -1,7 +1,7 @@
 {
- "titre": "Semaine du 28 septembre au 2 octobre 2026",
- "debut": "2026-09-28",
- "fin": "2026-10-02",
+ "titre": "Semaine du 5 au 9 octobre 2026",
+ "debut": "2026-10-05",
+ "fin": "2026-10-09",
  "note": "Le menu peut varier selon les disponibilités des matières. Origine des viandes : France.",
  "textures": [
   [
@@ -38,71 +38,71 @@
  "jours": [
   {
    "nom": "Lundi",
-   "date": "Lundi 28 septembre 2026",
-   "veggie": true,
+   "date": "Lundi 5 octobre 2026",
+   "veggie": false,
    "intro": [
-    "Mixé de potimarrons",
-    "Mixé de bananes"
+    "Mixé de choux-fleurs",
+    "Mixé de poires"
    ],
    "petit": [
-    "Purée fine de potimarrons",
-    "Crème de lentilles corail",
-    "Purée pom'bananes"
+    "Purée fine choux-fleurs",
+    "Mixé de sardines",
+    "Purée pom'poires cannelle"
    ],
    "moyen": [
-    "Purée fine de potimarrons",
-    "Crème de lentilles corail",
-    "Purée pom'bananes"
+    "Purée fine choux-fleurs",
+    "Mouliné de sardines",
+    "Purée pom'poires cannelle"
    ],
    "grand": [
-    "Dhal de lentilles corail aux petits légumes",
-    "Blé tendre",
-    "Fromage blanc",
-    "Purée pom'bananes"
+    "Ecrasé de choux-fleurs coco curry",
+    "Parmentier de pommes de terre et sardines",
+    "Yaourt",
+    "Purée de pom'poires cannelle"
    ],
    "geant": [
-    "Chou rouge aux pommes",
-    "Dhal de lentilles corail aux petits légumes",
-    "Blé tendre",
-    "Fromage blanc",
-    "Purée pom'bananes"
+    "Tomates cerises",
+    "Ecrasé de choux-fleurs coco curry",
+    "Parmentier de pommes de terre et sardines",
+    "Yaourt",
+    "Purée de pom'poires cannelle"
    ],
    "gouter": [
     "Purée de fruit",
-    "Pain de mie",
-    "Kiri"
+    "Galette de riz",
+    "Vache qui rit"
    ]
   },
   {
    "nom": "Mardi",
-   "date": "Mardi 29 septembre 2026",
-   "veggie": false,
+   "date": "Mardi 6 octobre 2026",
+   "veggie": true,
    "intro": [
-    "Mixé de haricots verts",
+    "Mixé de courgettes",
     "Mixé de pommes"
    ],
    "petit": [
-    "Purée fine de haricots verts",
-    "Mixé de bœuf",
-    "Purée pom'agrumes"
+    "Purée fine de courgettes",
+    "Crème de lentilles vertes",
+    "Purée pom'framboises"
    ],
    "moyen": [
-    "Purée fine de haricots verts",
-    "Mouliné de bœuf",
-    "Purée pom'agrumes"
+    "Purée fine de courgettes",
+    "Crème de lentilles vertes",
+    "Purée pom'framboises"
    ],
    "grand": [
-    "Coleslaw",
-    "Bolognaise au bœuf et petits légumes",
-    "Coquillettes",
-    "Comté",
+    "Carottes râpées/raisins",
+    "Blésotto de lentilles vertes",
+    "Ratatouille",
+    "Petits-suisses",
     "Fruits de saison"
    ],
    "geant": [
-    "Coleslaw",
-    "Bolognaise au bœuf et petits légumes",
-    "Coquillettes",
-    "Comté",
+    "Carottes râpées/raisins",
+    "Blésotto de lentilles vertes",
+    "Ratatouille",
+    "Petits-suisses",
     "Fruits de saison"
    ],
    "gouter": [
@@ -113,74 +113,75 @@
   },
   {
    "nom": "Mercredi",
-   "date": "Mercredi 30 septembre 2026",
+   "date": "Mercredi 7 octobre 2026",
    "veggie": false,
    "intro": [
-    "Mixé de carottes",
-    "Mixé de poires"
+    "Mixé d'épinards",
+    "Mixé de bananes"
    ],
    "petit": [
-    "Purée fine de carottes",
-    "Mixé d'œufs durs",
-    "Purée pom'poires"
+    "Purée fine d'épinards",
+    "Mixé de poisson",
+    "Purée pom'bananes"
    ],
    "moyen": [
-    "Purée fine de carottes",
-    "Mouliné d'œufs durs",
-    "Purée pom'poires"
+    "Purée fine d'épinards",
+    "Mouliné de poisson",
+    "Purée pom'bananes"
    ],
    "grand": [
-    "Carottes fondantes",
-    "Œufs brouillés au chèvre",
-    "Boulgour à la tomate",
-    "Purée pommes-poires"
+    "Epinards à l'ail",
+    "Penne",
+    "Filet de poisson sauce agrumes",
+    "Comté",
+    "Purée pom'bananes"
    ],
    "geant": [
-    "Pomelos à croquer",
-    "Carottes fondantes",
-    "Œufs brouillés au chèvre",
-    "Boulgour à la tomate",
-    "Purée pommes-poires"
+    "Salade tomates/maïs",
+    "Epinards à l'ail",
+    "Penne",
+    "Filet de poisson sauce agrumes",
+    "Comté",
+    "Purée pom'bananes"
    ],
    "gouter": [
     "Fruit de saison ou purée de fruit",
-    "Pain et confiture",
-    "Petits-suisses"
-   ],
-   "mentions": {
-    "grand": "Laitage inclus dans le plat",
-    "geant": "Laitage inclus dans le plat"
-   }
+    "Pain et chocolat",
+    "Yaourt"
+   ]
   },
   {
    "nom": "Jeudi",
-   "date": "Jeudi 1er octobre 2026",
+   "date": "Jeudi 8 octobre 2026",
    "veggie": false,
    "intro": [
-    "Mixé de brocolis",
-    "Mixé de coings"
+    "Mixé de haricots verts",
+    "Mixé de pommes"
    ],
    "petit": [
-    "Purée fine de brocolis",
-    "Mixé de poissons",
-    "Purée pom'coings"
+    "Purée fine haricots verts",
+    "Mixé de veau",
+    "Purée pom'prunes"
    ],
    "moyen": [
-    "Purée fine de brocolis",
-    "Mouliné de poisson",
-    "Purée pom'coings"
+    "Purée fine haricots verts",
+    "Mouliné de veau",
+    "Purée pom'prunes"
    ],
    "grand": [
-    "Brandade de poisson et pommes de terre",
-    "Brocolis aux amandes",
-    "Camembert",
+    "Radis noirs pamplemousse",
+    "Haricots verts échalote",
+    "Veau sauce forestière",
+    "Semoule de blé",
+    "Fromage blanc",
     "Fruits de saison"
    ],
    "geant": [
-    "Radis noirs à croquer",
-    "Brandade de poisson et pommes de terre",
-    "Brocolis aux amandes",
-    "Camembert",
+    "Radis noirs pamplemousse",
+    "Haricots verts échalote",
+    "Veau sauce forestière",
+    "Semoule de blé",
+    "Fromage blanc",
     "Fruits de saison"
    ],
    "gouter": [
@@ -191,42 +192,41 @@
   },
   {
    "nom": "Vendredi",
-   "date": "Vendredi 2 octobre 2026",
+   "date": "Vendredi 9 octobre 2026",
    "veggie": false,
    "intro": [
-    "Mixé de navets",
-    "Mixé de pommes"
+    "Mixé de carottes",
+    "Mixé de mangues"
    ],
    "petit": [
-    "Purée fine de navets",
-    "Mixé de porc",
-    "Purée pom'cannelle"
+    "Purée fine de carottes",
+    "Mixé d'œufs durs",
+    "Purée pom'mangues"
    ],
    "moyen": [
-    "Purée fine de navets",
-    "Mouliné de porc",
-    "Purée pom'cannelle"
+    "Purée fine de carottes",
+    "Mouliné d'œufs durs",
+    "Purée pom'mangues"
    ],
    "grand": [
-    "Carottes à l'orientale",
-    "Navets rôtis aux herbes",
-    "Sauté de porc sauce barbecue",
-    "Trio de céréales",
-    "Yaourt",
-    "Fruits de saison"
+    "Carottes fondantes",
+    "Œufs brouillés",
+    "Sarrasin et millet",
+    "Emmental",
+    "Gâteau du chef"
    ],
    "geant": [
-    "Carottes à l'orientale",
-    "Navets rôtis aux herbes",
-    "Sauté de porc sauce barbecue",
-    "Trio de céréales",
-    "Yaourt",
-    "Fruits de saison"
+    "Betteraves balsamique",
+    "Carottes fondantes",
+    "Œufs brouillés",
+    "Sarrasin et millet",
+    "Emmental",
+    "Gâteau du chef"
    ],
    "gouter": [
     "Fruit de saison ou purée de fruit",
-    "Pain complet",
-    "Vache qui rit"
+    "Pain",
+    "Kiri"
    ]
   }
  ]
