@@ -4,6 +4,7 @@
    très lisible (zéros non barrés, utile pour dates et téléphones). */
 
 :root{
+  color-scheme:light;
   --fond:#FFFFFF;
   --surface:#F0F7F4;
   --surface-2:#E1F1EA;
@@ -28,50 +29,8 @@
   --r:6px;
   --large:1120px;
 }
-@media (prefers-color-scheme:dark){
-  :root:not([data-theme="light"]){
-    --fond:#111917;
-    --surface:#172320;
-    --surface-2:#1E2D28;
-    --encre:#E6EFEB;
-    --doux:#A2B4AD;
-    --trait:#2A3A35;
-    --menthe:#50B898;
-    --menthe-fonce:#7FD5B9;
-    --orange:#F07A5C;
-    --orange-fonce:#F49A80;
-    --bouton-fond:#50B898;
-    --bouton-texte:#0C1915;
-    --bouton-survol:#6CC9AB;
-    --etiquette:#FBFBF8;
-    --pastille-fond:#F49A80;
-    --pastille-texte:#1B1210;
-    --fond-logo:#FFFFFF;
-    --marge-logo:3px 5px;
-    --ombre:0 14px 32px -20px rgba(0,0,0,.8);
-  }
-}
-:root[data-theme="dark"]{
-  --fond:#111917;
-  --surface:#172320;
-  --surface-2:#1E2D28;
-  --encre:#E6EFEB;
-  --doux:#A2B4AD;
-  --trait:#2A3A35;
-  --menthe:#50B898;
-  --menthe-fonce:#7FD5B9;
-  --orange:#F07A5C;
-  --orange-fonce:#F49A80;
-  --bouton-fond:#50B898;
-  --bouton-texte:#0C1915;
-  --bouton-survol:#6CC9AB;
-  --etiquette:#FBFBF8;
-  --pastille-fond:#F49A80;
-  --pastille-texte:#1B1210;
-  --fond-logo:#FFFFFF;
-  --marge-logo:3px 5px;
-  --ombre:0 14px 32px -20px rgba(0,0,0,.8);
-}
+/* Toujours clair, même quand le téléphone ou l'ordinateur est réglé en thème sombre :
+   Gaëtan trouve le fond noir austère (07/10/2026), le site reste blanc et lumineux. */
 
 /* ---------- base ---------- */
 *,*::before,*::after{box-sizing:border-box}
