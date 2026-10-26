@@ -1,7 +1,7 @@
 {
- "titre": "Semaine du 12 au 16 octobre 2026",
- "debut": "2026-10-12",
- "fin": "2026-10-16",
+ "titre": "Semaine du 26 au 30 octobre 2026",
+ "debut": "2026-10-26",
+ "fin": "2026-10-30",
  "note": "Le menu peut varier selon les disponibilités des matières. Origine des viandes : France.",
  "textures": [
   [
@@ -38,162 +38,7 @@
  "jours": [
   {
    "nom": "Lundi",
-   "date": "Lundi 12 octobre 2026",
-   "veggie": true,
-   "intro": [
-    "Mixé de courges",
-    "Mixé de pommes"
-   ],
-   "petit": [
-    "Purée fine de courges",
-    "Crème de pois cassés",
-    "Purée pommes vanille"
-   ],
-   "moyen": [
-    "Purée fine de courges",
-    "Crème de pois cassés",
-    "Purée pommes vanille"
-   ],
-   "grand": [
-    "Parmentier végé au potimarron",
-    "Coquillettes",
-    "Yaourt",
-    "Purée de pommes vanille"
-   ],
-   "geant": [
-    "Betteraves au sésame",
-    "Parmentier végé au potimarron",
-    "Coquillettes",
-    "Yaourt",
-    "Purée de pommes vanille"
-   ],
-   "gouter": [
-    "Purée de fruit",
-    "Tartine craquante",
-    "Vache qui rit"
-   ]
-  },
-  {
-   "nom": "Mardi",
-   "date": "Mardi 13 octobre 2026",
-   "veggie": false,
-   "intro": [
-    "Mixé de petits pois",
-    "Mixé de poires"
-   ],
-   "petit": [
-    "Purée fine de petits pois",
-    "Mixé de poulet",
-    "Purée de poires"
-   ],
-   "moyen": [
-    "Purée fine de petits pois",
-    "Mouliné de poulet",
-    "Purée de poires"
-   ],
-   "grand": [
-    "Pomelos",
-    "Poulet aux pruneaux et à l'orange",
-    "Petits pois à l'étuvée",
-    "Quinoa et millet",
-    "Camembert",
-    "Fruits de saison"
-   ],
-   "geant": [
-    "Pomelos",
-    "Poulet aux pruneaux et à l'orange",
-    "Petits pois à l'étuvée",
-    "Quinoa et millet",
-    "Camembert",
-    "Fruits de saison"
-   ],
-   "gouter": [
-    "Fruit de saison ou purée de fruit",
-    "Gâteau maison",
-    "Lait entier"
-   ]
-  },
-  {
-   "nom": "Mercredi",
-   "date": "Mercredi 14 octobre 2026",
-   "veggie": false,
-   "intro": [
-    "Mixé de betteraves",
-    "Mixé de bananes"
-   ],
-   "petit": [
-    "Purée fine betteraves",
-    "Mixé d'œufs durs",
-    "Purée bananes fruits rouges"
-   ],
-   "moyen": [
-    "Purée fine betteraves",
-    "Mouliné d'œufs durs",
-    "Purée bananes fruits rouges"
-   ],
-   "grand": [
-    "Betteraves fondantes",
-    "Tortillas à l'emmental et pomme de terre",
-    "Purée bananes fruits rouges"
-   ],
-   "geant": [
-    "Carottes râpées et maïs",
-    "Betteraves fondantes",
-    "Tortillas à l'emmental et pomme de terre",
-    "Purée bananes fruits rouges"
-   ],
-   "gouter": [
-    "Fruit de saison ou purée de fruit",
-    "Pain",
-    "Carré frais"
-   ],
-   "mentions": {
-    "grand": "Laitage inclus plat",
-    "geant": "Laitage inclus plat"
-   }
-  },
-  {
-   "nom": "Jeudi",
-   "date": "Jeudi 15 octobre 2026",
-   "veggie": false,
-   "intro": [
-    "Mixé de panais",
-    "Mixé de pommes"
-   ],
-   "petit": [
-    "Purée fine de panais",
-    "Mixé de poissons",
-    "Purée pom'raisins"
-   ],
-   "moyen": [
-    "Purée fine de panais",
-    "Mouliné de poisson",
-    "Purée pom'raisins"
-   ],
-   "grand": [
-    "Filet de poisson et sa crème aux herbes",
-    "Panais aux agrumes",
-    "Semoule couscous",
-    "Petits suisses aux fruits",
-    "Fruits de saison"
-   ],
-   "geant": [
-    "Radis à croquer",
-    "Filet de poisson et sa crème aux herbes",
-    "Panais aux agrumes",
-    "Semoule couscous",
-    "Petits suisses aux fruits",
-    "Fruits de saison"
-   ],
-   "gouter": [
-    "Fruit de saison ou purée de fruit",
-    "Gâteau maison",
-    "Fromage blanc"
-   ]
-  },
-  {
-   "nom": "Vendredi",
-   "date": "Vendredi 16 octobre 2026",
+   "date": "Lundi 26 octobre 2026",
    "veggie": false,
    "intro": [
     "Mixé de brocolis",
@@ -201,34 +46,187 @@
    ],
    "petit": [
     "Purée fine de brocolis",
-    "Mixé de bœuf",
-    "Purée bananes coco"
+    "Mixé de poulet",
+    "Purée pom'bananes"
    ],
    "moyen": [
     "Purée fine de brocolis",
-    "Mouliné de bœuf",
-    "Purée bananes coco"
+    "Mouliné de poulet",
+    "Purée pom'bananes"
    ],
    "grand": [
-    "Pomme de terre à l'aneth",
-    "Brocolis",
-    "Blé tendre",
-    "Bœuf à l'estragon",
-    "Comté",
+    "Brocolis aux amandes",
+    "Sauté de poulet à la normande",
+    "Riz rond de Camargue",
+    "Fromage blanc",
+    "Purée de pom'bananes"
+   ],
+   "geant": [
+    "Carottes râpées",
+    "Brocolis aux amandes",
+    "Sauté de poulet à la normande",
+    "Riz rond de Camargue",
+    "Fromage blanc",
+    "Purée de pom'bananes"
+   ],
+   "gouter": [
+    "Purée de fruit",
+    "Pain de mie",
+    "Kiri"
+   ]
+  },
+  {
+   "nom": "Mardi",
+   "date": "Mardi 27 octobre 2026",
+   "veggie": true,
+   "intro": [
+    "Mixé de choux-fleurs",
+    "Mixé de pommes"
+   ],
+   "petit": [
+    "Purée fine choux-fleurs",
+    "Crème de lentilles vertes",
+    "Purée pom'agrumes"
+   ],
+   "moyen": [
+    "Purée fine choux-fleurs",
+    "Crème de lentilles vertes",
+    "Purée pom'agrumes"
+   ],
+   "grand": [
+    "Betteraves balsamique",
+    "Blésotto de lentilles",
+    "Choux-fleurs au cumin",
+    "Brie",
     "Fruits de saison"
    ],
    "geant": [
-    "Pomme de terre à l'aneth",
-    "Brocolis",
-    "Blé tendre",
-    "Bœuf à l'estragon",
-    "Comté",
+    "Betteraves balsamique",
+    "Blésotto de lentilles",
+    "Choux-fleurs au cumin",
+    "Brie",
     "Fruits de saison"
    ],
    "gouter": [
     "Fruit de saison ou purée de fruit",
-    "Pain et confiture",
+    "Biscuits choco-avoine",
+    "Yaourt"
+   ]
+  },
+  {
+   "nom": "Mercredi",
+   "date": "Mercredi 28 octobre 2026",
+   "veggie": false,
+   "intro": [
+    "Mixé de petits pois",
+    "Mixé de poires"
+   ],
+   "petit": [
+    "Purée fine de petits pois",
+    "Mixé de poisson",
+    "Purée poires vanille"
+   ],
+   "moyen": [
+    "Purée fine de petits pois",
+    "Mouliné de poisson",
+    "Purée poires vanille"
+   ],
+   "grand": [
+    "Filet de poisson et sa crème de légumes",
+    "Pommes de terre",
+    "Petit pois à l'étuvée",
+    "Emmental",
+    "Purée poires vanille"
+   ],
+   "geant": [
+    "Céleri rave",
+    "Filet de poisson et sa crème de légumes",
+    "Pommes de terre",
+    "Petit pois à l'étuvée",
+    "Emmental",
+    "Purée poires vanille"
+   ],
+   "gouter": [
+    "Fruit de saison ou purée de fruit",
+    "Madeleines",
+    "Lait entier"
+   ]
+  },
+  {
+   "nom": "Jeudi",
+   "date": "Jeudi 29 octobre 2026",
+   "veggie": false,
+   "intro": [
+    "Mixé de panais",
+    "Mixé de mangues"
+   ],
+   "petit": [
+    "Purée fine de panais",
+    "Mixé de veau",
+    "Purée pom'mangue"
+   ],
+   "moyen": [
+    "Purée fine de panais",
+    "Mouliné de veau",
+    "Purée pom'mangue"
+   ],
+   "grand": [
+    "Radis à croquer",
+    "Sauté de veau marengo",
+    "Panais rôtis au miel",
+    "Penne",
+    "Crème dessert",
+    "Fruits de saison"
+   ],
+   "geant": [
+    "Radis à croquer",
+    "Sauté de veau marengo",
+    "Panais rôtis au miel",
+    "Penne",
+    "Crème dessert",
+    "Fruits de saison"
+   ],
+   "gouter": [
+    "Fruit de saison ou purée de fruit",
+    "Brioche et chocolat",
     "Petit suisse"
+   ]
+  },
+  {
+   "nom": "Vendredi",
+   "date": "Vendredi 30 octobre 2026",
+   "veggie": false,
+   "intro": [
+    "Mixé de courge",
+    "Mixé de myrtilles"
+   ],
+   "petit": [
+    "Purée fine de courge",
+    "Mixé de bœuf",
+    "Purée pomme myrtilles"
+   ],
+   "moyen": [
+    "Purée fine de courge",
+    "Mouliné de bœuf",
+    "Purée pomme myrtilles"
+   ],
+   "grand": [
+    "Chili du chaudron magique",
+    "Riz de la citrouille",
+    "Fromage blanc",
+    "Gâteau de Dracula"
+   ],
+   "geant": [
+    "Cervelle ensanglantée",
+    "Chili du chaudron magique",
+    "Riz de la citrouille",
+    "Fromage blanc",
+    "Gâteau de Dracula"
+   ],
+   "gouter": [
+    "Fruit de saison ou purée de fruit",
+    "Cookies",
+    "Lait entier"
    ]
   }
  ]
